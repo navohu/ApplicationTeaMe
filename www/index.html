@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
+        <!--<link rel="stylesheet" type="text/css" href="css/index.css"/>-->
+        <script type="text/javascript" src="js/index.js"></script>
+        <script>
+            $(document).bind('mobileinit',function(){
+                $.mobile.changePage.defaults.changeHash = false;
+                $.mobile.hashListeningEnabled = false;
+                $.mobile.pushStateEnabled = false;
+            });
+        </script>
+
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <!-- Include meta tag to ensure proper rendering and touch zooming -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Include jQuery Mobile stylesheets -->
+        <link rel="stylesheet" type="text/css" href="css/themes/jquery.mobile.icons.min.css">
+        <link rel="stylesheet" type="text/css" href="css/themes/TeaMe.min.css">
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+        <!-- Include the jQuery library -->
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <!-- Include the jQuery Mobile library -->
+        <script src="todos.js"></script>
+
+    </head>
+    <body onload="onBodyLoad()">
+        <!-- HOME PAGE -->
+        <div data-role="page" id="home">
+            <div data-role="header">
+                <h1>TeaMe</h1>
+            </div>
+            <div data-role="main" class="ui-content">
+                <p>HOME PAGE</p>
+            </div>
+            <div data-role="footer">
+            <div data-role="navbar">
+                <ul>
+                  <li><a href="#home" data-icon="home">Home</a></li>
+                  <li><a href="#message" data-icon="comment">Message</a></li>
+                  <li><a href="#todo" data-icon="check">To Do</a></li>
+                  <li><a href="#feeling" data-icon="search">Feeling</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- MESSAGE PAGE -->
+        <div data-role="page" id="message">
+            <div data-role="header">
+                <h1>TeaMe</h1>
+            </div>
+            <div data-role="main" class="ui-content">
+                <p>MESSAGE</p>
+            </div>
+            <div data-role="footer">
+            <div data-role="navbar">
+                <ul>
+                  <li><a href="#home" data-icon="home">Home</a></li>
+                  <li><a href="#message" data-icon="comment">Message</a></li>
+                  <li><a href="#todo" data-icon="check">To Do</a></li>
+                  <li><a href="#feeling" data-icon="search">Feeling</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- TODO PAGE -->
+        <div data-role="page" id="todo">
+            <div data-role="header">
+                <h1>Todos</h1>
+                <input id="new-todo" type="text" placeholder="What needs to be done?">
+            </div>
+            <div data-role="main" id="main" class="ui-content">
+                <ul id="todo-list">
+                </ul>
+            </div>
+            <div data-role="footer">
+            <div data-role="navbar">
+                <ul>
+                  <li><a href="#home" data-icon="home">Home</a></li>
+                  <li><a href="#message" data-icon="comment">Message</a></li>
+                  <li><a href="#todo" data-icon="check">To Do</a></li>
+                  <li><a href="#feeling" data-icon="search">Feeling</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- FEELING PAGE -->
+        <div data-role="page" id="feeling">
+            <div data-role="header">
+                <h1>TeaMe</h1>
+            </div>
+            <div data-role="main" class="ui-content">
+                <p>FEELING</p>
+            </div>
+            <div data-role="footer">
+            <div data-role="navbar">
+                <ul>
+                  <li><a href="#home" data-icon="home">Home</a></li>
+                  <li><a href="#message" data-icon="comment">Message</a></li>
+                  <li><a href="#todo" data-icon="check">To Do</a></li>
+                  <li><a href="#feeling" data-icon="search">Feeling</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+
+          
+    </body>
+</html>
