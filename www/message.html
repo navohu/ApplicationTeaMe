@@ -5,7 +5,7 @@
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
 
         <!-- JS File -->
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -25,14 +25,32 @@
         <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
 
     </head>
-    <body onload="onBodyLoad()">
+    <body>
         <!-- MESSAGE PAGE -->
         <div data-role="page" id="message">
             <div data-role="header">
                 <h1>TeaMe</h1>
             </div>
             <div data-role="main" class="ui-content">
-                <p>MESSAGE</p>
+                Enter Chat and press enter
+                <div><input id="input" placeholder="you-chat-here" /></div>
+
+                Chat Output
+                <div id="box"></div>
+
+                <script src="http://cdn.pubnub.com/pubnub.min.js"></script>
+                <script>(function(){
+                var box = PUBNUB.$('box'), input = PUBNUB.$('input'), channel = 'chat';
+                PUBNUB.subscribe({
+                    channel  : channel,
+                    callback : function(text) { box.innerHTML = (''+text).replace( /[<>]/g, '' ) + '<br>' + box.innerHTML }
+                });
+                PUBNUB.bind( 'keyup', input, function(e) {
+                    (e.keyCode || e.charCode) === 13 && PUBNUB.publish({
+                        channel : channel, message : input.value, x : (input.value='')
+                    })
+                } )
+                })()</script>
             </div>
             <div data-role="footer">
             <div data-role="navbar">
@@ -43,7 +61,9 @@
                   <li><a href="feelings.html" data-icon="search" data-ajax="false">Feeling</a></li>
                 </ul>
             </div>
-          </div>
+            </div>
         </div>
+        <!-- Include the PubNub Library -->
+        <script src="https://cdn.pubnub.com/pubnub-dev.js"></script>
     </body>
 </html>
