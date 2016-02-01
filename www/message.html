@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Meta tags -->
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
+
+        <!-- JS File -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script>
+            $(document).bind('mobileinit',function(){
+                $.mobile.changePage.defaults.changeHash = false;
+                $.mobile.hashListeningEnabled = false;
+                $.mobile.pushStateEnabled = false;
+            });
+        </script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        
+        <!-- Include jQuery Mobile stylesheets -->
+        <link rel="stylesheet" type="text/css" href="css/themes/jquery.mobile.icons.min.css">
+        <link rel="stylesheet" type="text/css" href="css/themes/TeaMe.min.css">
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+
+    </head>
+    <body onload="onBodyLoad()">
+        <!-- MESSAGE PAGE -->
+        <div data-role="page" id="message">
+            <div data-role="header">
+                <h1>TeaMe</h1>
+            </div>
+            <div data-role="main" class="ui-content">
+                <p>MESSAGE</p>
+            </div>
+            <div data-role="footer">
+            <div data-role="navbar">
+                <ul>
+                  <li><a href="index.html" data-icon="home" data-ajax="false">Home</a></li>
+                  <li><a href="message.html" data-icon="comment" data-ajax="false">Message</a></li>
+                  <li><a href="todo.html" data-icon="check" data-ajax="false">To Do</a></li>
+                  <li><a href="feelings.html" data-icon="search" data-ajax="false">Feeling</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+    </body>
+</html>
