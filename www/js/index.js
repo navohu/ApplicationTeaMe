@@ -1,40 +1,60 @@
 /*Creating a PubNub Chat forum for 1:1 messaging*/
+function displayCallback(m,e,c,d,f){
+	console.log(JSON.stringify(m, null, 4));
+}
+
+var channelgroup = "work";
+
+pubnub.channel_group_add_channel(){
+	callback: displayCallback,
+	error: displayCallback,
+	channel_group: channelgroup,
+	channel: "Ian, Maria, Sara"
+}
+
+pubnub.subscribe{
+	channel_group: channelgroup,
+	callback: displayCallback,
+	error: displayCallback
+}
+
 function chat(){
-	var PUBNUB_demo = PUBNUB.init({
+	var mychannel = PUBNUB({
                 publish_key: 'pub-c-1d031e2d-de94-4a51-a7af-34e61c1083be',
                 subscribe_key: 'sec-c-NGRmNmFjOTQtYWYxYy00Yzg0LTg5NzAtMDc4MTBhY2M5ZTY4'
             });
 	var chat = PUBNUB.$('box'), input = PUBNUB.$('input'), channel = 'chat';
-	var now = new Date();
+	var date = new Date();
+	var now = date.now();
 
-	pubnub.channel({
+
+	mychannel.subscribe({
 		channel: 'my_channel',
-	    message: function(m){console.log(m + now.getHours() + now.getMinutes())},
+	    message: function(m){console.log(m)},
+	    connect: pubnub.publish({
+               channel: 'my_channel',        
+               message: 'Hello from the PubNub Javascript SDK'
+            }),
 	    error: function (error) {
 	      // Handle error here
 	      console.log(JSON.stringify(error));
 	    }
 	});
 
-	PUBNUB.subscribe({
-    channel  : channel,
-    callback : function(text)
-    	{ 
-    		box.innerHTML = (''+text).replace( /[<>]/g, '' ) + '<br>' + box.innerHTML 
-    	}
-	});
+	// mychannel.subscribe({
+	//     channel  : channel,
+	//     callback : function(text)
+	//     	{ 
+	//     		box.innerHTML = (''+text).replace( /[<>]/g, '' ) + '<br>' + box.innerHTML 
+	//     	}
+	// });
 
-	pubnub.publish({
-    channel: 'my_channel',        
-    message: 'Hello from the PubNub Javascript SDK!',
-    callback : function(m){console.log(m)}
-	});
-
-	PUBNUB.bind( 'keyup', input, function(e) {
-    (e.keyCode || e.charCode) === 13 && PUBNUB.publish({
-        channel : channel, message : input.value, x : (input.value='')
-    })
-	});
+	
+	// pubnub.publish({
+	//     channel: 'my_channel',        
+	//     message: 'Hello from the PubNub Javascript SDK!',
+	//     callback : function(m){console.log(m + now.getHours() + now.getMinutes())}
+	// });
 }
 
 
