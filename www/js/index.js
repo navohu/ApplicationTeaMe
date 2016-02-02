@@ -1,3 +1,71 @@
+
+// On downkeypress enter the message function
+$("#userName").keydown(function(event){
+    if(event.keyCode == 13){
+        $("#joinChannel").click();
+    }
+});
+
+/*Creating a PubNub Chat forum for 1:1 messaging*/
+function displayCallback(m,e,c,d,f){
+	console.log(JSON.stringify(m, null, 4));
+}
+
+var channelgroup = "work";
+
+pubnub.channel_group_add_channel(){
+	callback: displayCallback,
+	error: displayCallback,
+	channel_group: channelgroup,
+	channel: "Ian, Maria, Sara"
+}
+
+pubnub.subscribe{
+	channel_group: channelgroup,
+	callback: displayCallback,
+	error: displayCallback
+}
+
+function chat(){
+	var mychannel = PUBNUB({
+                publish_key: 'pub-c-1d031e2d-de94-4a51-a7af-34e61c1083be',
+                subscribe_key: 'sec-c-NGRmNmFjOTQtYWYxYy00Yzg0LTg5NzAtMDc4MTBhY2M5ZTY4'
+            });
+	var chat = PUBNUB.$('box'), input = PUBNUB.$('input'), channel = 'chat';
+	var date = new Date();
+	var now = date.now();
+
+
+	mychannel.subscribe({
+		channel: 'my_channel',
+	    message: function(m){console.log(m)},
+	    connect: pubnub.publish({
+               channel: 'my_channel',        
+               message: 'Hello from the PubNub Javascript SDK'
+            }),
+	    error: function (error) {
+	      // Handle error here
+	      console.log(JSON.stringify(error));
+	    }
+	});
+
+	// mychannel.subscribe({
+	//     channel  : channel,
+	//     callback : function(text)
+	//     	{ 
+	//     		box.innerHTML = (''+text).replace( /[<>]/g, '' ) + '<br>' + box.innerHTML 
+	//     	}
+	// });
+
+	
+	// pubnub.publish({
+	//     channel: 'my_channel',        
+	//     message: 'Hello from the PubNub Javascript SDK!',
+	//     callback : function(m){console.log(m + now.getHours() + now.getMinutes())}
+	// });
+}
+
+
 var EnterKey = 13;
 
 $.fn.isBound = function(type, fn) {
@@ -54,6 +122,8 @@ $(document).ready(function() {
 		runBind();
 		$('#main').show();
     
+    chat();
   }}); // end if
 });
+
 
