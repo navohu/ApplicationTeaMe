@@ -82,10 +82,18 @@
                         pubnub.bind('click', pubnub.$('sendButton'), function(e) { 
                             pubnub.publish({
                                 channel : channel, 
-                                message : pubnub.get_uuid() + ' : '  + $('#message').val()
+                                message : pubnub.get_uuid() + ' : '  + $('#message').find('input:text').val()
                             });
                             $('#message').val('');
                         });
+
+                        /*Publish message when clicking enter and also resets the textbox*/
+                        $("#message").keydown(function(event){
+                        if(event.keyCode == 13){
+                            $("#sendButton").click();
+                            $('#message').find('input:text').val(''); 
+                        }
+                    });
                     })();
                 </script>
 

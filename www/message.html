@@ -35,14 +35,24 @@
             </div>
             <div data-role="main" class="ui-content">
                 <h2>Welcome to the tearoom</h2>
-                <input id="userName" type="text" placeholder="Type your name" class="userNameBar">
+                <input 
+                    id="userName" 
+                    type="text" 
+                    placeholder="Type your name" 
+                    class="userNameBar">
                 <button id="joinChannel" class="btn btn-primary" onclick="join()">Join</button>
 
                 <script type="text/javascript">
-                    function join(){ debugger;
+                    function join(){
+                        debugger;
                         var uuid = $('#userName').val();
                         window.location = 'tearoom.html?uuid=' + uuid;
                     }
+                    $("#userName").keydown(function(event){
+                        if(event.keyCode == 13){
+                            $("#joinChannel").click();
+                        }
+                    });
                 </script>
             </div>
             <div data-role="footer">

@@ -1,3 +1,11 @@
+
+// On downkeypress enter the message function
+$("#userName").keydown(function(event){
+    if(event.keyCode == 13){
+        $("#joinChannel").click();
+    }
+});
+
 /*Creating a PubNub Chat forum for 1:1 messaging*/
 function displayCallback(m,e,c,d,f){
 	console.log(JSON.stringify(m, null, 4));
