@@ -279,3 +279,18 @@ text-align: center;
 #credits a {
 color: #888;
 }
+
+#messageInput{
+    min-height: 5.2em;
+    max-height: 6.2em;
+    overflow-y: scroll;
+}
+
+#messageInputDiv{
+    bottom: 0;
+    width: 97%;
+    position: fixed;
+}
+.ui-content{
+    width: 100%;
+}
