@@ -4116,6 +4116,9 @@ textarea.ui-input-text {
 	-webkit-border-radius: inherit;
 	border-radius: inherit;
 }
+/*.ui-input-text #messageInput{
+	min-height: 5.2em;
+}*/
 textarea.ui-input-text {
 	overflow: auto;
 	resize: vertical;
