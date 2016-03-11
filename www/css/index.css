@@ -295,22 +295,6 @@ color: #888;
     width: 100%;
 }
 
-Skip to content
-This repository  
-Search
-Pull requests
-Issues
-Gist
- @navohu
- Watch 42
-  Star 33
-  Fork 26 pubnub/pubnub-chat-channel-presence
- Code  Issues 1  Pull requests 0  Wiki  Pulse  Graphs
-Branch: master Find file Copy pathpubnub-chat-channel-presence/default.css
-03ca895  on Aug 15, 2012
-@stephenlb stephenlb restored chat send button.
-1 contributor
-RawBlameHistory     394 lines (363 sloc)  7.62 KB
 body {
     background: #fff;
     padding: 0;
@@ -704,5 +688,77 @@ body {
     top: 56px;
     opacity: 0.2;
 }
-Status API Training Shop Blog About Pricing
-© 2016 GitHub, Inc. Terms Privacy Security Contact Help
+
+/*CHAT ROOM*/
+
+.userList {
+    height:500px; 
+    width:200px; 
+    background-color:#E6E6E6; 
+    position: absolute;
+    top: 15%;
+    left: 5%;
+}
+
+.chatHistory {
+    height:500px; 
+    width:700px; 
+    background-color:#E6E6E6; 
+    position: absolute;
+    top: 15%;
+    left:25%;
+}
+
+.message {
+    width: 600px;
+    position: absolute;
+    top: 80%;
+    left: 25%;
+}
+
+.sendButton {
+    position: absolute;
+    top: 80%;
+    left: 70%;
+}
+
+.leaveButton {
+    position: absolute;
+    top: 80%;
+    left: 10%;
+}
+
+.userNameBar {
+    position: absolute;
+    top: 50%;
+    left: 38%;
+}
+
+.joinButton {
+    position: absolute;
+    top: 50%;
+    left: 55%;
+}
+
+.welcome {
+    position: absolute;
+    top: 40%;
+    left: 33%;
+    font-size: xx-large;
+    color: red;
+    font-weight: bold;
+}
+
+.channelState {
+    height:200px; 
+    width:200px; 
+    background-color:#E6E6E6; 
+    position: absolute;
+    top: 15%;
+    left:30%;
+}
+
+.updateButton {
+    position: absolute;
+    top: 25%;
+    left:45%;
