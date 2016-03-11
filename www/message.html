@@ -5,7 +5,7 @@
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
 
         <!-- JS File -->
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -18,7 +18,6 @@
             });
         </script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-        <script src="http://cdn.pubnub.com/pubnub.min.js"></script>
         
         <!-- Include jQuery Mobile stylesheets -->
         <link rel="stylesheet" type="text/css" href="css/themes/jquery.mobile.icons.min.css">
@@ -26,47 +25,26 @@
         <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
 
     </head>
-    <body>
-        <!-- MESSAGE PAGE -->
-        <div data-role="page" id="message">
-        <!-- HEADER -->
+    <body onload="onBodyLoad()">
+        <!-- HOME PAGE -->
+        <div data-role="page" id="home">
             <div data-role="header">
-                <h1>Message</h1>
+                <h1>TeaMe</h1>
             </div>
             <div data-role="main" class="ui-content">
-                <h2>Welcome to the TEAROOM</h2>
-                <input 
-                    id="userName" 
-                    type="text" 
-                    placeholder="Type your name" 
-                    class="userNameBar">
-                <button id="joinChannel" class="btn btn-primary" onclick="join()">Join</button>
-
-                <script type="text/javascript">
-                    function join(){
-                        debugger;
-                        var uuid = $('#userName').val();
-                        window.location = 'tearoom.html?uuid=' + uuid;
-                    }
-                    $("#userName").keydown(function(event){
-                        if(event.keyCode == 13){
-                            $("#joinChannel").click();
-                        }
-                    });
-                </script>
+                <p>Messaging</p>
             </div>
             <div data-role="footer">
             <div data-role="navbar">
                 <ul>
                   <li><a href="index.html" data-icon="home" data-ajax="false">Home</a></li>
-                  <li><a href="message.html" data-icon="comment" data-ajax="false">Message</a></li>
-                  <li><a href="todo.html" data-icon="check" data-ajax="false">To Do</a></li>
+                  <li><a href="tearoomInit.html" data-icon="comment" data-ajax="false">TeaRoom</a></li>
+                  <li><a href="message.html" data-icon="check" data-ajax="false">Messaging</a></li>
                   <li><a href="feelings.html" data-icon="search" data-ajax="false">Feeling</a></li>
+                  <li><a href="userpage.html" data-icon="check" data-ajax="false">User Page</a></li>
                 </ul>
             </div>
-            </div>
-        </div>
-        <!-- Include the PubNub Library -->
-        <script src="https://cdn.pubnub.com/pubnub-dev.js"></script>
+          </div>
+        </div>     
     </body>
 </html>
