@@ -1,3 +1,5 @@
+<?php include("log-in.php");?>
+
 <?php
 require('config.php');
 
@@ -9,13 +11,11 @@ if(isset($_POST['submit']))
 
  $check = mysql_query("SELECT * FROM `users` WHERE `uname` = '$uname' AND `pass` = '$pass'");
  if(mysql_num_rows($check) >= 1){
-  echo "You are now logged in!";
+  header("Location: http://localhost/Teame_data/ApplicationTeaMe/www/userpage.html");
   exit();
  }
  else{
-
-  echo "Wrong username or password";
+  header("Location: http://localhost/Teame_data/ApplicationTeaMe/www/message.html");
  }
 }
 ?>
-
