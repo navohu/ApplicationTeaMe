@@ -1,4 +1,4 @@
-<?php include("log-in.php");?>
+<?php include("log-in.html");?>
 
 <?php
 require('config.php');
@@ -15,7 +15,8 @@ if(isset($_POST['submit']))
   exit();
  }
  else{
-  header("Location: http://localhost/Teame_data/ApplicationTeaMe/www/message.html");
+  echo "<a href='#$dlg-invalid-credentials'>Click</a>";
+  echo "<a name='Comments'>Comments</a>";
  }
 }
 ?>
