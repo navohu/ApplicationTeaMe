@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -55,11 +59,27 @@
                 </div>
 
                 <script type="text/javascript">
+                    function join(){
+                        debugger;
+                        var uuid = '<?php echo $_SESSION["uuid"]?>';
+                        console.log(uuid);
+                        // window.location = 'tearoom.html?uuid=' + uuid;
+                    }
+                    $("#userName").keydown(function(event){
+                        if(event.keyCode == 13){
+                            $("#joinChannel").click();
+                        }
+                    });
+                </script>
+
+                <script type="text/javascript">
+                	$(document).ready(join());
                     (function() { 
                         var publish_key = 'pub-c-39594782-c4b0-4fb3-80fe-74e262353bf6';
                         var subscribe_key = 'sub-c-7ae61028-e9dd-11e3-92e7-02ee2ddab7fe';
                         channel = 'myChat';
-                        var username = window.location.search.substring(1).split('=')[1];
+                        var username = '<?php echo $_SESSION["uuid"]?>';
+                        console.log(username);
                        
                         pubnub =PUBNUB.init({
                             publish_key : publish_key,

@@ -1,6 +1,5 @@
-<?php include("log-in.html");?>
-
 <?php
+session_start();
 require('config.php');
 
 if(isset($_POST['submit']))
@@ -11,8 +10,9 @@ if(isset($_POST['submit']))
 
  $check = mysql_query("SELECT * FROM `users` WHERE `uname` = '$uname' AND `pass` = '$pass'");
  if(mysql_num_rows($check) >= 1){
-  header("Location: http://localhost/Teame_data/ApplicationTeaMe/www/userpage.html");
-  exit();
+ 	$_SESSION["uuid"] = $uname;
+  	header("Location: http://localhost/Teame_data/ApplicationTeaMe/www/userpage.html");
+  	exit();
  }
  else{
   echo "<a href='#$dlg-invalid-credentials'>Click</a>";
