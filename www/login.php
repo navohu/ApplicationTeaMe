@@ -1,3 +1,4 @@
+<?php include("log-in.html");?>
 <?php
 session_start();
 require('config.php');
