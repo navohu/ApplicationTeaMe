@@ -1,0 +1,18 @@
+[Wed Mar 23 15:57:22 2016] [notice] Digest: generating secret for digest authentication ...
+[Wed Mar 23 15:57:22 2016] [notice] Digest: done
+[Wed Mar 23 15:57:22 2016] [notice] FastCGI: process manager initialized (pid 86413)
+[Wed Mar 23 15:57:22 2016] [notice] Apache/2.2.29 (Unix) mod_wsgi/3.5 Python/2.7.10 PHP/5.6.10 mod_ssl/2.2.29 OpenSSL/0.9.8zg DAV/2 mod_fastcgi/2.4.6 mod_perl/2.0.9 Perl/v5.22.0 configured -- resuming normal operations
+[Wed Mar 23 15:57:24 2016] [error] [client ::1] File does not exist: /Users/nathalievonhuth/Documents/ComputerScience15/SystemsEngineering/GitHub/ApplicationTeaMe/docs-assets, referer: http://localhost/MAMP/?language=English
+[Wed Mar 23 15:57:31 2016] [error] [client ::1] Directory index forbidden by Options directive: /Users/nathalievonhuth/Documents/ComputerScience15/SystemsEngineering/GitHub/ApplicationTeaMe/
+[Wed Mar 23 15:57:39 2016] [error] [client ::1] Directory index forbidden by Options directive: /Users/nathalievonhuth/Documents/ComputerScience15/SystemsEngineering/GitHub/ApplicationTeaMe/
+[Wed Mar 23 15:57:42 2016] [error] [client ::1] File does not exist: /Users/nathalievonhuth/Documents/ComputerScience15/SystemsEngineering/GitHub/ApplicationTeaMe/index.html
+[Wed Mar 23 15:58:17 2016] [notice] caught SIGTERM, shutting down
+[Wed Mar 23 15:58:50 2016] [notice] Digest: generating secret for digest authentication ...
+[Wed Mar 23 15:58:50 2016] [notice] Digest: done
+[Wed Mar 23 15:58:51 2016] [notice] FastCGI: process manager initialized (pid 87094)
+[Wed Mar 23 15:58:51 2016] [notice] Apache/2.2.29 (Unix) mod_wsgi/3.5 Python/2.7.10 PHP/5.6.10 mod_ssl/2.2.29 OpenSSL/0.9.8zg DAV/2 mod_fastcgi/2.4.6 mod_perl/2.0.9 Perl/v5.22.0 configured -- resuming normal operations
+[Wed Mar 23 15:58:55 2016] [error] [client ::1] File does not exist: /Users/nathalievonhuth/Documents/ComputerScience15/SystemsEngineering/GitHub/ApplicationTeaMe/index.html
+[Wed Mar 23 15:58:58 2016] [error] [client ::1] File does not exist: /Users/nathalievonhuth/Documents/ComputerScience15/SystemsEngineering/GitHub/ApplicationTeaMe/index.html
+[Wed Mar 23 15:58:59 2016] [error] [client ::1] Directory index forbidden by Options directive: /Users/nathalievonhuth/Documents/ComputerScience15/SystemsEngineering/GitHub/ApplicationTeaMe/
+[Wed Mar 23 15:58:59 2016] [error] [client ::1] Directory index forbidden by Options directive: /Users/nathalievonhuth/Documents/ComputerScience15/SystemsEngineering/GitHub/ApplicationTeaMe/
+[Wed Mar 23 15:59:16 2016] [notice] caught SIGTERM, shutting down

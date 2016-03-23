@@ -1,0 +1,689 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+/* Portrait layout (default) */
+
+
+html, body
+{
+    padding: 0;
+    margin: 0;
+}
+body
+{
+    background-color: #fff;
+    font-family: Arial, Helvetica, Verdana;
+    font-size: 14px;
+    line-height: 22px;
+    color: #666;
+    position: relative;
+    -webkit-text-size-adjust: none;
+}
+body *
+{
+    text-shadow: none;
+}
+h1, h2, h3, h4, h5, h6
+{
+    line-height: 1;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+}
+h1, h2, h3
+{
+    font-size: 18px;
+}
+h4, h5, h6
+{
+    font-size: 16px;
+}
+p
+{
+    margin: 0 0 10px 0;
+}
+a, a:link, a:active, a:visited, a:hover
+{
+    color: inherit;
+    text-decoration: underline;
+}
+
+nav:not(.mm-menu)
+{
+    display: none;
+}
+
+.header,
+.content,
+.footer
+{
+    text-align: center;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0px;
+}
+
+.header,
+.footer
+{
+    background: #777;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 40px;
+
+
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; 
+    width: 100%;
+    height: 40px;
+    padding: 0 50px;
+}
+.header.fixed
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.footer.fixed
+{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.header a
+{
+    background: center center no-repeat transparent;
+    background-image: url( data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADhJREFUeNpi/P//PwOtARMDHQBdLGFBYtMq3BiHT3DRPU4YR4NrNAmPJuHRJDyahEeT8Ii3BCDAAF0WBj5Er5idAAAAAElFTkSuQmCC );
+
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+}
+.content
+{
+    padding: 150px 50px 50px 50px;
+}
+
+#todoapp h1 {
+font-size: 36px;
+font-weight: bold;
+text-align: center;
+padding: 0 0 10px 0;
+}
+#todoapp input[type="text"] {
+width: 466px;
+font-size: 24px;
+font-family: inherit;
+line-height: 1.4em;
+border: 0;
+outline: none;
+padding: 6px;
+border: 1px solid #999999;
+-webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+-moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+-ms-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+-o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+}
+ #todoapp input::-webkit-input-placeholder {
+ font-style: italic;
+}
+#main {
+display: none;
+}
+#todo-list {
+margin: 10px 0;
+padding: 0;
+list-style: none;
+}
+#todo-list li {
+padding: 18px 20px 18px 0;
+position: relative;
+font-size: 24px;
+border-bottom: 1px solid #cccccc;
+}
+#todo-list li:last-child {
+border-bottom: none;
+}
+#todo-list li.done label {
+color: #777777;
+text-decoration: line-through;
+}
+#todo-list .destroy {
+position: absolute;
+right: 5px;
+top: 20px;
+display: none;
+cursor: pointer;
+width: 20px;
+height: 20px;
+background: url(destroy.png) no-repeat;
+}
+#todo-list li:hover .destroy {
+display: block;
+}
+#todo-list .destroy:hover {
+background-position: 0 -20px;
+}
+#todo-list li.editing {
+border-bottom: none;
+margin-top: -1px;
+padding: 0;
+}
+#todo-list li.editing:last-child {
+margin-bottom: -1px;
+}
+#todo-list li.editing .edit {
+display: block;
+width: 444px;
+padding: 13px 15px 14px 20px;
+margin: 0;
+}
+#todo-list li.editing .view {
+display: none;
+}
+#todo-list li .view label {
+word-break: break-word;
+}
+#todo-list li .edit {
+display: none;
+}
+#todoapp footer {
+display: none;
+margin: 0 -20px -20px -20px;
+overflow: hidden;
+color: #555555;
+background: #f4fce8;
+border-top: 1px solid #ededed;
+padding: 0 20px;
+line-height: 37px;
+-webkit-border-radius: 0 0 5px 5px;
+-moz-border-radius: 0 0 5px 5px;
+-ms-border-radius: 0 0 5px 5px;
+-o-border-radius: 0 0 5px 5px;
+border-radius: 0 0 5px 5px;
+}
+#clear-completed {
+float: right;
+line-height: 20px;
+text-decoration: none;
+background: rgba(0, 0, 0, 0.1);
+color: #555555;
+font-size: 11px;
+margin-top: 8px;
+margin-bottom: 8px;
+padding: 0 10px 1px;
+cursor: pointer;
+-webkit-border-radius: 12px;
+-moz-border-radius: 12px;
+-ms-border-radius: 12px;
+-o-border-radius: 12px;
+border-radius: 12px;
+-webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 0 0;
+-moz-box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 0 0;
+-ms-box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 0 0;
+-o-box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 0 0;
+box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 0 0;
+}
+#clear-completed:hover {
+background: rgba(0, 0, 0, 0.15);
+-webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 -1px 0 0;
+-moz-box-shadow: rgba(0, 0, 0, 0.3) 0 -1px 0 0;
+-ms-box-shadow: rgba(0, 0, 0, 0.3) 0 -1px 0 0;
+-o-box-shadow: rgba(0, 0, 0, 0.3) 0 -1px 0 0;
+box-shadow: rgba(0, 0, 0, 0.3) 0 -1px 0 0;
+}
+#clear-completed:active {
+position: relative;
+top: 1px;
+}
+#todo-count span {
+font-weight: bold;
+}
+#instructions {
+margin: 10px auto;
+color: #777777;
+text-shadow: rgba(255, 255, 255, 0.8) 0 1px 0;
+text-align: center;
+}
+#instructions a {
+color: #336699;
+}
+#credits {
+margin: 30px auto;
+color: #999;
+text-shadow: rgba(255, 255, 255, 0.8) 0 1px 0;
+text-align: center;
+}
+#credits a {
+color: #888;
+}
+
+#messageInput{
+    min-height: 5.2em;
+    max-height: 6.2em;
+    overflow-y: scroll;
+}
+
+#messageInputDiv{
+    bottom: 9%;
+    width: 97%;
+    position: fixed;
+}
+.ui-content{
+    width: 100%;
+}
+body {
+    background: #fff;
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+#overlay {
+    z-index: 100;
+    background: url(chat-overlay.png);
+    position: absolute;
+    overflow: hidden;
+    top: 0px;
+    left: 0px;
+    width: 1024px;
+    height: 768px;
+}
+
+/* TWITTER */
+#twitter-login {
+    z-index: 150;
+    position: absolute;
+    top: 300px;
+    left: 267px;
+    background: #fff;
+    border-radius: 40px;
+}
+#twitter-login-button {
+    cursor: pointer;
+    margin: 20px;
+    width: 450px;
+    height: 72px;
+    background: url(sign-in-with-twitter.png);
+}
+#anonymous-login {
+    cursor: pointer;
+    text-align: center;
+    text-decoration: underline;
+    color: #3ae;
+    font-family: "Open Sans";
+    margin-bottom: 20px;
+}
+
+#main {
+    z-index: 50;
+    margin: 0;
+    border: 0;
+    padding: 0;
+
+    position: relative;
+    overflow: hidden;
+
+    width: 1024px;
+    height: 768px;
+
+    background: #fefef2 url(chat-bg.jpg) no-repeat;
+
+    color: #ffe;
+    font-size: 15px;
+    font-family: "Open Sans";
+    font-weight: 400;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+}
+.circle-header, .circle-header-icon {
+    position: absolute;
+    overflow: hidden;
+    top: 16px;
+    left: 22px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 100px;
+    background: #f2f;
+    width: 31px;
+    height: 31px;
+}
+
+.circle-header-one   { background: #f0f }
+.circle-header-two   { background: #f90 }
+.circle-header-three { background: #0ff }
+
+.circle-header-icon       { }
+.circle-header-icon-one   {
+    background: transparent url(flag-icon.png) no-repeat 6px 6px
+}
+.circle-header-icon-two   {
+    background: transparent url(users-icon.png) no-repeat 5px 5px
+}
+.circle-header-icon-three {     
+    background: transparent url(chat-icon.png) no-repeat 6px 6px
+}
+
+.circle-header-text {
+    position: absolute;
+    top: 23px;
+    left: 66px;
+    letter-spacing: -1px;
+    font-size: 20px;
+    font-family: "Source Sans Pro";
+    font-weight: 400;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+
+}
+.section {
+    position: absolute;
+    overflow: hidden;
+    top: 0px;
+    left: 0px;
+    width: 347px;
+    height: 406px;
+}
+.section-one {
+    
+}
+.section-two {
+    top: 407px;
+    width: 347px;
+    height: 360px;
+}
+.section-three {
+    left: 347px;
+    width: 677px;
+    height: 768px;
+}
+.time {
+    position: absolute;
+    top: 52px;
+    left: 70px;
+    font-size: 90px;
+    font-family: "Source Sans Pro";
+    font-weight: 200;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
+.time sup { font-size: 37px }
+.time-line {
+    position: absolute;
+    top: 166px;
+    left: 22px;
+    font-size: 0px;
+    line-height: 0px;
+    height: 3px;
+    background: rgba(255,255,255,0.4);
+    width: 300px;
+}
+
+/* UPDATES */
+.update-area {
+    position: absolute;
+    top: 180px;
+    left: 22px;
+}
+.update-item {
+    margin: 10px 0;
+    font-size: 14px;
+}
+.update-time,
+.chat-box-message-time {
+    display: inline-block;
+    width: 100px;
+    font-weight: 700;
+    font-size: 16px;
+}
+.update-time sup,
+.chat-box-message-time sup {
+    font-size: 10px;
+    font-weight: 400;
+}
+.update-line {
+    font-size: 0px;
+    line-height: 0px;
+    height: 1px;
+    background: rgba(255,255,255,0.3);
+    width: 300px;
+    margin: 10px 0;
+}
+
+
+/* PEOPLE */
+#list-of-people {
+    position: absolute;
+    top: 53px;
+    left: 20px;
+    width: 300px;
+    height: 300px;
+}
+.person {
+    height: 52px;
+    width: 300px;
+}
+.person-line {
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    height: 20px;
+    width: 2px;
+    background: rgba(255,255,255,0.5);
+}
+.person-name {
+    position: absolute;
+    top: 24px;
+    left: 45px;
+    height: 20px;
+    width: 300px;
+}
+.person-picture, 
+#chat-box-user-icon {
+    position: absolute;
+    overflow: hidden;
+    top: 20px;
+    left: 5px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 100px;
+    background: #555;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+
+    -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+    -ms-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+    -o-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+}
+.person-offline {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+/* TALK */
+.chat-box-area-inset,
+.chat-box-area {
+    position: absolute;
+    overflow: hidden;
+    top: 100px;
+    left: 20px;
+
+    background: rgba(0,0,0,0.4);
+
+    width: 640px;
+    height: 42px;
+
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 12px;
+
+    -webkit-box-shadow: 1px 8px 20px 2px rgba(0,0,0,0.1);
+    -moz-box-shadow: 1px 8px 20px 2px rgba(0,0,0,0.1);
+    -ms-box-shadow: 1px 8px 20px 2px rgba(0,0,0,0.1);
+    -o-box-shadow: 1px 8px 20px 2px rgba(0,0,0,0.1);
+    box-shadow: 1px 8px 20px 2px rgba(0,0,0,0.1);
+}
+.chat-box-area-inset {
+    top: 0;
+    left: 0;
+    border: 0;
+    background: transparent;
+    -webkit-box-shadow: inset 1px 8px 20px 2px rgba(0,0,0,0.8);
+    -moz-box-shadow: inset 1px 8px 20px 2px rgba(0,0,0,0.8);
+    -ms-box-shadow: inset 1px 8px 20px 2px rgba(0,0,0,0.8);
+    -o-box-shadow: inset 1px 8px 20px 2px rgba(0,0,0,0.8);
+    box-shadow: inset 1px 8px 20px 2px rgba(0,0,0,0.8);
+}
+.chat-box-input {
+    outline: 0;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+
+    background: transparent;
+    border: 0;
+
+    width: 480px;
+    height: 20px;
+    font-size: 18px;
+    color: #fefef2;
+}
+.chat-box-button {
+    cursor: pointer;
+    outline: 0;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 140px;
+    height: 36px;
+    background: rgba(0,255,255,0.8) url(chat-icon.png) no-repeat 90px 7px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 9px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    box-shadow: -8px 0px 12px 0px rgba(0,0,0,0.1);
+    text-align: left;
+    padding-left: 40px;
+}
+.chat-box-button:hover {
+    background-color: rgba(100,255,255,0.9)
+}
+.chat-box-button:active {
+    background-color: rgba(255,200,200,0.9)
+}
+
+#chat-box-user-icon {
+    border: 0;
+    top: 8px;
+    left: 460px;
+    right: 20px;
+    width: 27px;
+    height: 27px;
+}
+
+.chat-box-output {
+    position: absolute;
+    overflow: hidden;
+    top: 200px;
+    left: 20px;
+
+    width: 640px;
+    height: 568px;
+}
+.chat-box-person {
+    width: 640px;
+    padding-bottom: 6px;
+    margin-bottom: 6px;
+}
+.chat-box-person-line {
+    font-size: 0px;
+    line-height: 0px;
+    height: 1px;
+    background: rgba(255,255,255,0.3);
+    width: 640px;
+    margin: 10px 0;
+}
+
+.chat-box-message {
+    float: left;
+    font-size: 17px;
+    font-weight: 500;
+    width: 440px;
+}
+.chat-box-message-name {
+    float: left;
+    width: 130px;
+    font-weight: 700;
+}
+.chat-box-message-time {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    text-align: right;
+}
+
+/* UTILITY */
+.relative { position: relative }
+.clear { clear: both }
+
+/* FOOTER AREA */
+#footer-area {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 1024px;
+    height: 100px;
+    background: url(chat-bg-bottom.png);
+}
+.pubnub-logo {
+    background: url(pubnub-logo.png);
+    width: 116px;
+    height: 26px;
+}
+.pubnub-logo-top,
+.pubnub-logo-bottom {
+    position: absolute;
+    top: 21px;
+    right: 20px;
+    font-weight: 200;
+    font-family: "Source Sans Pro";
+    text-align: right;
+    opacity: 0.9;
+}
+.pubnub-logo-bottom {
+    top: 56px;
+    opacity: 0.2;
+}

@@ -35,4 +35,4 @@ if (isset($_POST['submit']))
   echo "Sorry, your email's or your passwords do not match. <br />";
  }
 }
- ?>
+?>
