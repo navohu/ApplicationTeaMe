@@ -15,6 +15,8 @@
 -----------------------------------------------------------------------------------------------------------*/
 html {
 	font-size: 100%;
+	max-height: 90vh;
+	
 }
 body,
 input,
@@ -40,6 +42,14 @@ div.ui-controlgroup-label {
 }
 /* Separators
 -----------------------------------------------------------------------------------------------------------*/
+.ui-page{
+	background: url("../../img/background2.jpg")no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	min-height: 100%;
+}
 /* Field contain separator (< 28em) */
 .ui-field-contain {
 	border-bottom-color: #828282;
@@ -751,4 +761,14 @@ button[disabled],
 	right: 0;
 	left: 0;
 }
-			
+.ui-grid-b{
+	text-align: center;
+}
+
+#feel-today-header{
+	text-align: center;
+}
+
+.emoji{
+	width: 65%;
+}			
