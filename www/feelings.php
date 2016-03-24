@@ -55,7 +55,7 @@
             <div data-role="navbar">
                 <ul>
                   <li><a href="newsfeed.html" data-icon="home" data-ajax="false">Home</a></li>
-                  <li><a href="tearoomInit.html" data-icon="comment" data-ajax="false">TeaRoom</a></li>
+                  <li><a href="tearoom.php" data-icon="comment" data-ajax="false">TeaRoom</a></li>
                   <li><a href="message.html" data-icon="check" data-ajax="false">Messaging</a></li>
                   <li><a href="feelings.php" data-icon="search" data-ajax="false">Feeling</a></li>
                   <li><a href="userpage.html" data-icon="check" data-ajax="false">User Page</a></li>
