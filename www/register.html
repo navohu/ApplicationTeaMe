@@ -3,9 +3,11 @@
 <head>
     <title>TeaMe Teamwork App - Register</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/themes/Ninni.css" />
-    <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
+
+    <!-- <link href="css/themes/1/teame-theme-1.min.css" rel="stylesheet" />
+    <link href="css/themes/1/jquery.mobile.icons.min.css" rel="stylesheet" />
+    <link href="lib/jqm/1.4.5/jquery.mobile.structure-1.4.5.min.css" rel="stylesheet" />
+    <link href="css/application.css" rel="stylesheet" /> -->
     <script src="lib/jquery/2.2.1/jquery-2.2.1.min.js"></script>
     <script src="lib/jqm/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
@@ -19,7 +21,7 @@
         <form name="form" action="register.php" method="post">
 
           <label for="txt-first-name">First Name</label>
-          <input type="text" name="name" >
+          <input type="text" name="fname" >
           <label for="txt-last-name">Last Name</label>
           <input type="text" name="lname">
           <label for="txt-last-name">User Name</label>
@@ -33,6 +35,17 @@
           <label for="txt-password-confirm">Confirm Password</label>
           <input type="password" name="pass2">
           <input type="submit" name="submit" value="Register">
+
+          <!-- <div data-role="popup" id="dlg-sign-up-sent" data-dismissible="false" style="max-width:400px;">
+              <div data-role="header">
+                  <h1>Almost done...</h1>
+              </div>
+              <div role="main" class="ui-content">
+                  <h3>Confirm Your Email Address</h3>
+                  <p>We sent you an email with instructions on how to confirm your email address. Please check your inbox and follow the instructions in the email.</p>
+                  <div class="mc-text-center"><a href="sign-in.html" class="ui-btn ui-corner-all ui-shadow ui-btn-b mc-top-margin-1-5">OK</a></div>
+              </div>
+          </div> -->
         </form>
     </div><!-- /content -->
 </div><!-- /page -->

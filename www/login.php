@@ -8,7 +8,7 @@ if(isset($_POST['submit']))
  $pass = mysql_escape_string($_POST['pass']);
  $pass = md5($pass);
 
- $check = mysql_query("SELECT * FROM `users` WHERE `uname` = '$uname' AND `pass` = '$pass'");
+ $check = mysql_query("SELECT * FROM `Users` WHERE `uname` = '$uname' AND `pass` = '$pass'");
  if(mysql_num_rows($check) >= 1){
  	$_SESSION["uuid"] = $uname;
   	header("Location: http://localhost/Teame_data/ApplicationTeaMe/www/userpage.html");
