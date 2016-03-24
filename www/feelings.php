@@ -22,9 +22,10 @@
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
         
         <!-- Include jQuery Mobile stylesheets -->
-        <link rel="stylesheet" type="text/css" href="css/themes/jquery.mobile.icons.min.css">
-        <link rel="stylesheet" type="text/css" href="css/themes/TeaMe.min.css">
-        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+        <link rel="stylesheet" href="css/themes/Ninni.css" />
+        <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+        
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
 
     </head>
     <!-- <body onload="onBodyLoad()"> -->
@@ -37,45 +38,17 @@
                 <p>FEELING</p>
             </div>
 
-             <script type="text/javascript">
-                    function join(){
-                        debugger;
-                        var uuid = '<?php echo $_SESSION["uuid"]?>';
-                        console.log(uuid);
-                        // window.location = 'tearoom.html?uuid=' + uuid;
-                    }
-                    $("#userName").keydown(function(event){
-                        if(event.keyCode == 13){
-                            $("#joinChannel").click();
-                        }
-                    });
-                </script>
-
-                <script type="text/javascript">
-                    $(document).ready(join());
-                    (function() { 
-                        var publish_key = 'pub-c-39594782-c4b0-4fb3-80fe-74e262353bf6';
-                        var subscribe_key = 'sub-c-7ae61028-e9dd-11e3-92e7-02ee2ddab7fe';
-                        channel = 'myChat';
-                        var username = '<?php echo $_SESSION["uuid"]?>';
-                        console.log(username);
-                       
-                        pubnub =PUBNUB.init({
-                            publish_key : publish_key,
-                            subscribe_key : subscribe_key,
-                            uuid : username
-                        });
-</script>
 
             <div role="main" class="ui-content">
         <h3>How do you feel today, <?php echo $_SESSION["uuid"]?> ?</h3>
 
-        <form name="form" action="feelings1.php" method="post">
+            <form name="form" action="feelings1.php" method="post">
 
-          <label for="txt-user-feeling">Enter your mood:</label>
-          <input type="text" name="user_feeling" >
-          <input type="submit" name="submit" value="Submit">
- </form>
+                <label for="txt-user-feeling">Enter your mood:</label>
+                <!-- <input type="hidden" name="smiley" value="happy" > -->
+                <input type="text" name="user_feeling" >
+                <input type="submit" name="submit" value="Submit">
+            </form>
 
 
             <div data-role="footer">
@@ -90,5 +63,6 @@
             </div>
           </div>
         </div>
+    </div>
     </body>
 </html>

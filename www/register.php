@@ -11,7 +11,7 @@ if (isset($_POST['submit']))
 
  if($email1 == $email2 && $pass1 == $pass2)
  {
-   //All good
+   
    $fname = mysql_escape_string($_POST['fname']);
    $lname = mysql_escape_string($_POST['lname']);
    $uname = mysql_escape_string($_POST['uname']);
