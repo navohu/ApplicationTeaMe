@@ -36,15 +36,15 @@
             <div role="main" class="ui-content">
                 <h3 id="feel-today-header">How do you feel today, <?php echo $_SESSION["uuid"]?> ?</h3>
                 <div class="ui-grid-b">
-                    <div class="ui-block-a"><input class="emoji" type="image" value="submit" src="img/1.png"></div>
-                    <div class="ui-block-b"><input class="emoji" type="image" value="submit" src="img/2.png"></div>
-                    <div class="ui-block-c"><input class="emoji" type="image" value="submit" src="img/3.png"></div>
-                    <div class="ui-block-a"><input class="emoji" type="image" value="submit" src="img/4.png"></div>
-                    <div class="ui-block-b"><input class="emoji" type="image" value="submit" src="img/5.png"></div>
-                    <div class="ui-block-c"><input class="emoji" type="image" value="submit" src="img/6.png"></div>
-                    <div class="ui-block-a"><input class="emoji" type="image" value="submit" src="img/7.png"></div>
-                    <div class="ui-block-b"><input class="emoji" type="image" value="submit" src="img/8.png"></div>
-                    <div class="ui-block-c"><input class="emoji" type="image" value="submit" src="img/9.png"></div>
+                    <div class="ui-block-a"><input class="emoji" type="image" value="cool" src="img/1.png"></div>
+                    <div class="ui-block-b"><input class="emoji" type="image" value="in love" src="img/2.png"></div>
+                    <div class="ui-block-c"><input class="emoji" type="image" value="satisfied" src="img/3.png"></div>
+                    <div class="ui-block-a"><input class="emoji" type="image" value="overwhelmed" src="img/4.png"></div>
+                    <div class="ui-block-b"><input class="emoji" type="image" value="sleepy" src="img/5.png"></div>
+                    <div class="ui-block-c"><input class="emoji" type="image" value="worked out" src="img/6.png"></div>
+                    <div class="ui-block-a"><input class="emoji" type="image" value="happy" src="img/7.png"></div>
+                    <div class="ui-block-b"><input class="emoji" type="image" value="sad" src="img/8.png"></div>
+                    <div class="ui-block-c"><input class="emoji" type="image" value="angry" src="img/9.png"></div>
                 </div>
             </div>
             <div data-role="footer">
