@@ -24,7 +24,7 @@ if (isset($_POST['submit']))
 //  if($uname == $_SESSION["uuid"])
 // {
  mysql_query($sql) or die(mysql_error());
-   header("Location: http://localhost/Teame_data/ApplicationTeaMe/www/userpage.html");
+   header("Location: http://localhost/Teame_data/ApplicationTeaMe/www/userpage.php");
    exit();
 // }
 }

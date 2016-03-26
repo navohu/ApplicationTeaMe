@@ -34,22 +34,23 @@
                 <h1>User page</h1>
             </div>
 
+            <div data-role="header">
+            <div data-role="navbar">
+                <ul>
+                  <li><a href="" data-icon="edit" data-ajax="false">Edit Profile</a></li>
+                  <li><a href="" data-icon="search" data-ajax="false">Search for a user</a></li>
+                  <li><a href="index.html" data-icon="back" data-ajax="false">Logout</a></li>
+                </ul>
+            </div>
+          </div>
+
 
             <div class="container">
     <!-- <div class="row clearfix"> -->
         <div class="col-md-12">
             <h1 class="text-center">Welcome to TeaMe</h1>
         </div>
-        <!-- <div class="col-md-4"></div> -->
-<!--         <div class="col-md-4">
-            <ul class="nav text-center">
-                <li><a href="edit-profile.php">Edit your profile</a></li>
-                <li><a href="view-all-users.html">View all users</a></li>
-                <li><a href="components/logout.php">Logout</a></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div> -->
+        
 <?php
 
    require('config.php');

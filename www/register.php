@@ -27,7 +27,7 @@ if (isset($_POST['submit']))
    //Put everyting in DB
    else{
    mysql_query("INSERT INTO `Users` (`id`, `fname`, `lname`, `uname`, `email`, `pass`) VALUES (NULL, '$fname', '$lname', '$uname', '$email1', '$pass1')") or die(mysql_error());
-   header("Location: http://localhost/Teame_data/ApplicationTeaMe/www/log-in.html");
+   header("Location: http://localhost/Teame_data/ApplicationTeaMe/www/login.php");
    exit();
    }
  }
