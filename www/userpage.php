@@ -1,12 +1,13 @@
+<!-- <?php //include 'top-navigation.php' ?> -->
+
 <!DOCTYPE html>
-<?php session_start(); ?>
 <html>
     <head>
         <!-- Meta tags -->
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
 
         <!-- JS File -->
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -27,26 +28,54 @@
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
 
     </head>
-    <!-- <body onload="onBodyLoad()"> -->
-        <!-- FEELING PAGE -->
-        <div data-role="page" id="feeling">
+    <body>
+        <div data-role="page" id="userpage">
             <div data-role="header">
-                <h1>TeaMe</h1>
+                <h1>User page</h1>
             </div>
-            <div role="main" class="ui-content">
-                <h3 id="feel-today-header">How do you feel today, <?php echo $_SESSION["uuid"]?> ?</h3>
-                <div class="ui-grid-b">
-                    <div class="ui-block-a"><input class="emoji" type="image" value="cool" name="cool" src="img/1.png"></div>
-                    <div class="ui-block-b"><input class="emoji" type="image" value="in love" name="in love" src="img/2.png"></div>
-                    <div class="ui-block-c"><input class="emoji" type="image" value="satisfied" name="satisfied" src="img/3.png"></div>
-                    <div class="ui-block-a"><input class="emoji" type="image" value="overwhelmed" name="overwhelmed" src="img/4.png"></div>
-                    <div class="ui-block-b"><input class="emoji" type="image" value="sleepy" name="sleepy" src="img/5.png"></div>
-                    <div class="ui-block-c"><input class="emoji" type="image" value="worked out" name="worked out" src="img/6.png"></div>
-                    <div class="ui-block-a"><input class="emoji" type="image" value="happy" name="happy" src="img/7.png"></div>
-                    <div class="ui-block-b"><input class="emoji" type="image" value="sad" name="sad" src="img/8.png"></div>
-                    <div class="ui-block-c"><input class="emoji" type="image" value="angry" name="angry" src="img/9.png"></div>
-                </div>
-            </div>
+
+
+            <div class="container">
+    <!-- <div class="row clearfix"> -->
+        <div class="col-md-12">
+            <h1 class="text-center">Welcome to TeaMe</h1>
+        </div>
+        <!-- <div class="col-md-4"></div> -->
+<!--         <div class="col-md-4">
+            <ul class="nav text-center">
+                <li><a href="edit-profile.php">Edit your profile</a></li>
+                <li><a href="view-all-users.html">View all users</a></li>
+                <li><a href="components/logout.php">Logout</a></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div> -->
+<?php
+
+   require('config.php');
+   require('db.php');
+   session_start();
+
+   $uname = $_SESSION["uuid"];
+
+   $sql = "SELECT * FROM Users WHERE uname = '$uname'";
+   $result = mysql_query($sql);
+
+// if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+
+   // $pass = md5($pass);
+    while($row = mysql_fetch_assoc($result)) {
+        echo "First Name: <b>" . $row["fname"] . "</b><br /> Last Name: <b>" . $row["lname"] . "</b><br /> Username: <b>" . $row["uname"] . "</b><br /> Password: <b>" . $row["pass"] . "</b><br /> Email address: <b>" . $row["email"] . "</b><br /> Mood: <b>" . $row["user_feeling"] . "</b><br /> Location: <b>" . $row["user_location"] . "</b><br /> Status: <b>" . $row["user_status"] . "</b><br /> <br />";
+    // }
+}
+
+?>
+        <!-- <div class="col-md-4"></div> -->
+    </div>
+<!-- </div> -->
+
+
             <div data-role="footer">
             <div data-role="navbar">
                 <ul>

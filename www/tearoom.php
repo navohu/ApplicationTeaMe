@@ -147,7 +147,7 @@ session_start();
                   <li><a href="tearoom.php" data-icon="comment" data-ajax="false">TeaRoom</a></li>
                   <li><a href="message.html" data-icon="check" data-ajax="false">Messaging</a></li>
                   <li><a href="feelings.php" data-icon="search" data-ajax="false">Feeling</a></li>
-                  <li><a href="userpage.html" data-icon="check" data-ajax="false">User Page</a></li>
+                  <li><a href="userpage.php" data-icon="check" data-ajax="false">User Page</a></li>
                 </ul>
             </div>
             </div>

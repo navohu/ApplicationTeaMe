@@ -15,6 +15,7 @@ if (isset($_POST['submit']))
  // $user_feeling = mysql_escape_string($_POST['user_feeling']);
 
  $user_feeling = mysql_escape_string($_POST['cool']);
+ //$user_feeling = "cool";
  $uname = $_SESSION["uuid"];
  $sql = "UPDATE Users SET user_feeling='$user_feeling' WHERE uname = '$uname'";
 
