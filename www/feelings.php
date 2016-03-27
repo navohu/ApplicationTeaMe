@@ -35,17 +35,28 @@
             </div>
             <div role="main" class="ui-content">
                 <h3 id="feel-today-header">How do you feel today, <?php echo $_SESSION["uuid"]?> ?</h3>
+
+                
                 <div class="ui-grid-b">
-                    <div class="ui-block-a"><input class="emoji" type="image" value="cool" name="cool" src="img/1.png"></div>
-                    <div class="ui-block-b"><input class="emoji" type="image" value="in love" name="in love" src="img/2.png"></div>
-                    <div class="ui-block-c"><input class="emoji" type="image" value="satisfied" name="satisfied" src="img/3.png"></div>
-                    <div class="ui-block-a"><input class="emoji" type="image" value="overwhelmed" name="overwhelmed" src="img/4.png"></div>
-                    <div class="ui-block-b"><input class="emoji" type="image" value="sleepy" name="sleepy" src="img/5.png"></div>
-                    <div class="ui-block-c"><input class="emoji" type="image" value="worked out" name="worked out" src="img/6.png"></div>
-                    <div class="ui-block-a"><input class="emoji" type="image" value="happy" name="happy" src="img/7.png"></div>
-                    <div class="ui-block-b"><input class="emoji" type="image" value="sad" name="sad" src="img/8.png"></div>
-                    <div class="ui-block-c"><input class="emoji" type="image" value="angry" name="angry" src="img/9.png"></div>
+                <form name="form" action="feelings1.php" method="post">
+                    <div class="ui-block-a"><input class="emoji" type="image" value="cool" name="user_feeling" src="img/1.png"></div>
+                    <div class="ui-block-b"><input class="emoji" type="image" value="in love" name="user_feeling" src="img/2.png"></div>
+                    <div class="ui-block-c"><input class="emoji" type="image" value="satisfied" name="user_feeling" src="img/3.png"></div>
+                    <div class="ui-block-a"><input class="emoji" type="image" value="overwhelmed" name="user_feeling" src="img/4.png"></div>
+                    <div class="ui-block-b"><input class="emoji" type="image" value="sleepy" name="user_feeling" src="img/5.png"></div>
+                    <div class="ui-block-c"><input class="emoji" type="image" value="worked out" name="user_feeling" src="img/6.png"></div>
+                    <div class="ui-block-a"><input class="emoji" type="image" value="happy" name="user_feeling" src="img/7.png"></div>
+                    <div class="ui-block-b"><input class="emoji" type="image" value="sad" name="user_feeling" src="img/8.png"></div>
+                    <div class="ui-block-c"><input class="emoji" type="image" value="angry" name="user_feeling" src="img/9.png"></div>
+                    
+                </form>
                 </div>
+
+<!--                <form name="form" action="feelings1.php" method="post">
+                    <div class="ui-block-b"><input class="emoji" type="image" value="in love" name="user_feeling" src="img/2.png"></div>
+                    <div class="ui-block-a"><input type="submit" name="cool" value="Cool"></div>
+               </form> -->
+
             </div>
             <div data-role="footer">
             <div data-role="navbar">
