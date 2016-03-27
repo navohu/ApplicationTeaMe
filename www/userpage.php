@@ -37,7 +37,7 @@
             <div data-role="header">
             <div data-role="navbar">
                 <ul>
-                  <li><a href="" data-icon="edit" data-ajax="false">Edit Profile</a></li>
+                  <li><a href="edit-profile.php" data-icon="edit" data-ajax="false">Edit Profile</a></li>
                   <li><a href="" data-icon="search" data-ajax="false">Search for a user</a></li>
                   <li><a href="index.html" data-icon="back" data-ajax="false">Logout</a></li>
                 </ul>
@@ -48,7 +48,8 @@
             <div class="container">
     <!-- <div class="row clearfix"> -->
         <div class="col-md-12">
-            <h1 class="text-center">Welcome to TeaMe</h1>
+            <!-- <h1 class="text-center">Welcome to TeaMe</h1> -->
+            <h1 class="text-center">Profile</h1>
         </div>
         
 <?php
@@ -67,8 +68,10 @@
 
    // $pass = md5($pass);
     while($row = mysql_fetch_assoc($result)) {
-        echo "First Name: <b>" . $row["fname"] . "</b><br /> Last Name: <b>" . $row["lname"] . "</b><br /> Username: <b>" . $row["uname"] . "</b><br /> Password: <b>" . $row["pass"] . "</b><br /> Email address: <b>" . $row["email"] . "</b><br /> Mood: <b>" . $row["user_feeling"] . "</b><br /> Location: <b>" . $row["user_location"] . "</b><br /> Status: <b>" . $row["user_status"] . "</b><br /> <br />";
+        echo "First Name: <b>" . $row["fname"] . "</b><br /> Last Name: <b>" . $row["lname"] . "</b><br /> Username: <b>" . $row["uname"] . "</b><br /> Email address: <b>" . $row["email"] . "</b><br /> Mood: <b>" . $row["user_feeling"] . "</b><br /> Location: <b>" . $row["user_location"] . "</b><br /> Status: <b>" . $row["user_status"] . "</b><br /> <br />";
     // }
+
+        // Password: <b>" . $row["pass"] . "</b><br />
 }
 
 ?>
