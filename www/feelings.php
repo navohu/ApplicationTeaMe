@@ -35,10 +35,9 @@
             </div>
             <div role="main" class="ui-content">
                 <h3 id="feel-today-header">How do you feel today, <?php echo $_SESSION["uuid"]?> ?</h3>
-
                 
-                <div class="ui-grid-b">
                 <form name="form" action="feelings1.php" method="post">
+                <div class="ui-grid-b">
                     <div class="ui-block-a"><input class="emoji" type="image" value="cool" name="user_feeling" src="img/1.png"></div>
                     <div class="ui-block-b"><input class="emoji" type="image" value="in love" name="user_feeling" src="img/2.png"></div>
                     <div class="ui-block-c"><input class="emoji" type="image" value="satisfied" name="user_feeling" src="img/3.png"></div>

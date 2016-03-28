@@ -30,7 +30,6 @@ session_start();
         <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
         
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
-        <link rel="stylesheet" href="css/index.css" />
 
     </head>
     <body>
@@ -47,21 +46,14 @@ session_start();
                 </ul>
                 <div id="chatHistory" class="table-bordered chatHistory"></div>
 
-                <div id="messageInputDiv" class="ui-responsive">
-                    <div class="ui-grid-a">
-                        <div class="ui-block-a"><button id="leaveButton" class="btn btn-danger leaveButton" onclick="leave()">Leave</button></div>
-                        <div class="ui-block-b"><button id="sendButton" class="btn btn-primary sendButton">Send</button></div>
-                    </div><!-- /grid-a -->
-                    
-
-                    <textarea name="textarea" id="messageInput" placeholder="Enter your message here" class="message"></textarea>
-
-                    
+                <div class="ui-grid-b" id="messageInputDiv">
+                    <div class="ui-block-a" id="break-leave"><button id="leaveButton" class="btn btn-danger leaveButton" onclick="leave()">Leave</button></div>
+                    <div class="ui-block-b" id="break-message"><textarea name="textarea" id="messageInput" placeholder="Enter your message here" class="message" contenteditable="true"></textarea></div>
+                    <div class="ui-block-c" id="break-send"><button id="sendButton" class="btn btn-primary sendButton">Send</button></div>
                 </div>
 
                 <script type="text/javascript">
                     function join(){
-                        debugger;
                         var uuid = '<?php echo $_SESSION["uuid"]?>';
                         console.log(uuid);
                         // window.location = 'tearoom.html?uuid=' + uuid;
