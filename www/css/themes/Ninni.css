@@ -84,7 +84,6 @@ div.ui-controlgroup-label {
 label.ui-btn {
 	font-weight: bold;
 	border-width: 1px;
-	border-style: solid;
 }
 .ui-btn {
 	text-decoration: none !important;
@@ -305,7 +304,6 @@ html head + body .ui-btn.ui-btn-a:visited {
 	background-color: #f6f6f6 /*{a-bup-background-color}*/;
 	border-color: #dddddd /*{a-bup-border}*/;
 	color: #333333 /*{a-bup-color}*/;
-	text-shadow: 0 /*{a-bup-shadow-x}*/ 1px /*{a-bup-shadow-y}*/ 0 /*{a-bup-shadow-radius}*/ #f3f3f3 /*{a-bup-shadow-color}*/;
 }
 /* Button hover */
 .ui-page-theme-a .ui-btn:hover,
@@ -801,12 +799,13 @@ button[disabled],
 }
 
 #messageInput{
-    max-height: 3.2em;
+    max-height: 100%;
     overflow-y: scroll;
     width: inherit;
     margin: 0 !important;
-    width: 80%;
+    width: 100%;
     height: 100%;
+    resize: none;
 }
 
 #break-leave{
@@ -815,25 +814,45 @@ button[disabled],
 #break-send{
 	width: 10%;
 }
-.userList {
-    height:500px; 
-    width:200px; 
-    position: absolute;
-    top: 15%;
-    left: 5%;
+#break-message{
+	width: 80%;
+}
+#onlineNow{
+	/*text-align: center;*/
+	border-radius: 50% !important;
+	background-color: rgba(225,225,225, 0.5);
+	padding: 20px !important;
+	right: 0;
+	top: 0;
+	position: absolute;
+	z-index: 10;
+}
+#userList {
+    /*position: absolute;*/
+    height: 80%;
+    width: 100%;
+    background: rgba(204, 204, 204, 0.9);
+    /*top: 15%;
+    left: 5%;*/
 }
 
 .chatHistory {
-    height:60%; 
-    width:75%; 
+    height:82%; 
+    width:100%; 
     position: absolute;
-    top: 15%;
-    left:25%;
+    top: 8%;
+    background: rgba(225,225,225,0.2);
+    color: white;
 }
 
-.message {
-
+#timeLine{
+	height: 100%;
+    width: 1%;
+    background: rgba(225,225,225,0.2);
+    right: 3.3%;
+    position: absolute;
 }
+
 
 .sendButton {
     position: absolute;

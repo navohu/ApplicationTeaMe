@@ -41,10 +41,13 @@ session_start();
             </div>
             <!-- MAIN BODY -->
             <div data-role="main" class="ui-content">
-                    <h3>TeaRoom Participants</h3>
-                <ul id="userList" class="table-bordered userList" >
-                </ul>
+                <a href="#myPopup" id="onlineNow" data-rel="popup"  data-position-to="window" class="ui-btn ui-btn-inline  ui-icon-user ui-btn-icon-left" data-iconpos="top"></a>
+                <div data-role="popup" id="myPopup">
+                    <ul data-role="listview" data-inset="true" id="userList" class="table-bordered userList ui-btn ui-btn-inline  ui-icon-user ui-btn-icon-left" >
+                    </ul>
+                </div>
                 <div id="chatHistory" class="table-bordered chatHistory"></div>
+                <div id="timeLine"></div>
 
                 <div class="ui-grid-b" id="messageInputDiv">
                     <div class="ui-block-a" id="break-leave"><button id="leaveButton" class="btn btn-danger leaveButton" onclick="leave()">Leave</button></div>
@@ -72,6 +75,8 @@ session_start();
                         var subscribe_key = 'sub-c-7ae61028-e9dd-11e3-92e7-02ee2ddab7fe';
                         channel = 'myChat';
                         var username = '<?php echo $_SESSION["uuid"]?>';
+                        // var dt = new Date();
+                        // var time = dt.getHours() + ":" + dt.getMinutes() +  ":  ";
                         console.log(username);
                        
                         pubnub =PUBNUB.init({
