@@ -34,18 +34,13 @@
             </div>
             <!-- MAIN BODY -->
             <div data-role="main" class="ui-content">
-                    <h3>TeaRoom Participants</h3>
-                <ul id="userList" class="table-bordered userList" >
-                </ul>
                 <div id="chatHistory" class="table-bordered chatHistory"></div>
+                <div id="timeLine"></div>
 
-                <div id="messageInputDiv" class="ui-responsive">
-                    <div class="ui-grid-a">
-                        <div class="ui-block-a"><button id="leaveButton" class="btn btn-danger leaveButton" onclick="leave()">Leave</button></div>
-                        <div class="ui-block-b"><button id="sendButton" class="btn btn-primary sendButton">Send</button></div>
-                    </div><!-- /grid-a -->
-
-                    <textarea name="textarea" id="messageInput" placeholder="Enter your message here" class="message"></textarea>
+                <div class="ui-grid-b" id="messageInputDiv">
+                    <div class="ui-block-a" id="break-leave"><button id="leaveButton" class="btn btn-danger leaveButton" onclick="leave()">Leave</button></div>
+                    <div class="ui-block-b" id="break-message"><textarea name="textarea" id="messageInput" placeholder="Enter your message here" class="message" contenteditable="true"></textarea></div>
+                    <div class="ui-block-c" id="break-send"><button id="sendButton" class="btn btn-primary sendButton">Send</button></div>
                 </div>
             
 
