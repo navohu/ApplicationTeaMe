@@ -40,13 +40,13 @@ session_start();
                 <h1>TeaRoom</h1>
             </div>
             <!-- MAIN BODY -->
-            <div data-role="main" class="ui-content">
+            <div data-role="main" id="tearoom" class="ui-content">
                 <a href="#myPopup" id="onlineNow" data-rel="popup"  data-position-to="window" class="ui-btn ui-btn-inline  ui-icon-user ui-btn-icon-left" data-iconpos="top"></a>
                 <div data-role="popup" id="myPopup">
                     <ul data-role="listview" data-inset="true" id="userList" class="table-bordered userList ui-btn ui-btn-inline  ui-icon-user ui-btn-icon-left" >
                     </ul>
                 </div>
-                <div id="chatHistory" class="table-bordered chatHistory"></div>
+                <div id="teaRoomHistory" class="table-bordered chatHistory"></div>
                 <div id="timeLine"></div>
 
                 <div class="ui-grid-b" id="messageInputDiv">
@@ -88,7 +88,7 @@ session_start();
                         pubnub.subscribe({
                             channel : channel,
                             callback : function(message) { 
-                                $('#chatHistory')[0].innerHTML = message + '<br/>' + $('#chatHistory')[0].innerHTML; 
+                                $('#teaRoomHistory')[0].innerHTML = message + '<br/>' + $('#teaRoomHistory')[0].innerHTML; 
                             },
                             presence : function(state) { 
                                 if (state.action == 'join') {

@@ -845,6 +845,18 @@ button[disabled],
     color: white;
 }
 
+#tearoom{
+	background: url(../../img/woodBackF.jpeg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+/*#teaRoomHistory{
+	background: url(../../img/woodBackB.jpeg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}*/
+
 #timeLine{
 	height: 100%;
     width: 1%;
@@ -859,6 +871,7 @@ button[disabled],
     bottom: 1vh;
     width: 50%;
     height: 100%;
+    font-size: 2vw;
 }
 
 .leaveButton {
@@ -866,6 +879,11 @@ button[disabled],
     bottom: 1vh;
     width: 50%;
     height: 100%;
+    font-size: 2vw;
+}
+
+#leaveButton, #sendButton{
+	font-size: 2vw;
 }
 
 div.ui-grid-b *{
@@ -946,3 +964,10 @@ div.ui-grid-b *{
     top: 56px;
     opacity: 0.2;
 }		
+
+.postFeed{
+	list-style-type: none;
+	background: rgba(225,225,225,0.5);
+	padding: 4%;
+	margin: 3%;
+}
