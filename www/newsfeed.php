@@ -40,13 +40,13 @@ session_start();
                 <h1>NewsFeed</h1>
             </div>
             <!-- MAIN BODY -->
-            <div data-role="main" id="tearoom" class="ui-content">
+            <div data-role="main" class="ui-content">
                 <a href="#myPopup" id="onlineNow" data-rel="popup"  data-position-to="window" class="ui-btn ui-btn-inline  ui-icon-user ui-btn-icon-left" data-iconpos="top"></a>
                 <div data-role="popup" id="myPopup">
                     <ul data-role="listview" data-inset="true" id="userList" class="table-bordered userList ui-btn ui-btn-inline  ui-icon-user ui-btn-icon-left" >
                     </ul>
                 </div>
-                <div id="teaRoomHistory" class="table-bordered chatHistory"></div>
+                <div id="newsfeedHistory" class="table-bordered chatHistory"></div>
                 <div id="timeLine"></div>
 
                 <div class="ui-grid-b" id="messageInputDiv">
@@ -88,7 +88,7 @@ session_start();
                         pubnub.subscribe({
                             channel : channel,
                             callback : function(message) { 
-                                $('#teaRoomHistory')[0].innerHTML = '<li class= "postFeed">' + 'wrote ' + message  + '<br/>' + $('#teaRoomHistory')[0].innerHTML + '</li>'; 
+                                $('#newsfeedHistory')[0].innerHTML = '<li class= "postFeed">' + message  + '<br/>' + $('#newsfeedHistory')[0].innerHTML + '</li>'; 
                             },
                             presence : function(state) { 
                                 if (state.action == 'join') {
@@ -109,7 +109,7 @@ session_start();
                         pubnub.bind('click', pubnub.$('sendButton'), function(e) { 
                             pubnub.publish({
                                 channel : channel, 
-                                message : pubnub.get_uuid() + ' : '  + $('textarea#messageInput').val()
+                                message : pubnub.get_uuid() + ' just posted: ' + '<br/>' + $('textarea#messageInput').val() 
                             });
                             $('#messageInput').val('');
                         });
@@ -140,10 +140,9 @@ session_start();
             <div data-role="footer">
             <div data-role="navbar">
                 <ul>
-                  <li><a href="newsfeed.html" data-icon="home" data-ajax="false">Home</a></li>
+                  <li><a href="newsfeed.php" data-icon="home" data-ajax="false">Home</a></li>
                   <li><a href="tearoom.php" data-icon="comment" data-ajax="false">TeaRoom</a></li>
-                  <li><a href="message.html" data-icon="check" data-ajax="false">Messaging</a></li>
-                  <li><a href="feelings.php" data-icon="search" data-ajax="false">Feeling</a></li>
+                  <li><a href="message.php" data-icon="check" data-ajax="false">Messaging</a></li>
                   <li><a href="userpage.php" data-icon="check" data-ajax="false">User Page</a></li>
                 </ul>
             </div>
