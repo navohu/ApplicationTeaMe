@@ -31,56 +31,48 @@
     <body>
         <div data-role="page" id="userpage">
             <div data-role="header">
-                <h1>User page</h1>
+                <h1>Teams</h1>
             </div>
 
-            <div data-role="header">
+<!--             <div data-role="header">
             <div data-role="navbar">
                 <ul>
                   <li><a href="edit-profile.php" data-icon="edit" data-ajax="false">Edit Profile</a></li>
-                  <li><a href="teams.php" data-icon="search" data-ajax="false">Choose a Team</a></li>
+                  <li><a href="" data-icon="search" data-ajax="false">Choose a Team</a></li>
                   <li><a href="index.html" data-icon="back" data-ajax="false">Logout</a></li>
                 </ul>
             </div>
-          </div>
+          </div> -->
 
 
             <div class="container">
     <!-- <div class="row clearfix"> -->
         <div class="col-md-12">
             <!-- <h1 class="text-center">Welcome to TeaMe</h1> -->
-            <h1 class="text-center">Profile</h1>
+            <h1 class="text-center">All teams you are in:</h1>
         </div>
         
-<?php
 
-   require('config.php');
-   require('db.php');
-   session_start();
 
-   $uname = $_SESSION["uuid"];
+<div class="topcorner"><a href="createATeam.php">Create a Team</a></div>
 
-   $sql = "SELECT * FROM Users WHERE uname = '$uname'";
-   $result = mysql_query($sql);
+<style type="text/css">
+ .topcorner{
+   position:absolute;
+   top:0;
+   right:0;
+  }
+</style>
 
-// if (mysqli_num_rows($result) > 0) {
-    // output data of each row
 
-   // $pass = md5($pass);
-    while($row = mysql_fetch_assoc($result)) {
-        echo "First Name: <b>" . $row["fname"] . "</b><br /> Last Name: <b>" . $row["lname"] . "</b><br /> Username: <b>" . $row["uname"] . "</b><br /> Email address: <b>" . $row["email"] . "</b><br /> Mood: <b>" . $row["user_feeling"] . "</b><br /> Location: <b>" . $row["user_location"] . "</b><br /> Status: <b>" . $row["user_status"] . "</b><br /> <br />";
-    // }
 
-        // Password: <b>" . $row["pass"] . "</b><br />
-}
-
-?>
         <!-- <div class="col-md-4"></div> -->
     </div>
 <!-- </div> -->
 
 
-            <div data-role="footer">
+
+<!--             <div data-role="footer">
             <div data-role="navbar">
                 <ul>
                   <li><a href="newsfeed.html" data-icon="home" data-ajax="false">Home</a></li>
@@ -90,7 +82,7 @@
                   <li><a href="userpage.php" data-icon="check" data-ajax="false">User Page</a></li>
                 </ul>
             </div>
-          </div>
+          </div> -->
         </div>
     </body>
 </html>
