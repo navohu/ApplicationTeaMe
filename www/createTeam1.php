@@ -1,7 +1,7 @@
+<?php include("createATeam.html");?>
+
 <?php
 
-
-   require('createATeam.php');
    require('config.php');
    require('db.php');
    session_start();
@@ -23,7 +23,7 @@
  //   exit();
 
      mysql_query("INSERT INTO `Teams` (`team_id`, `team_name`, `team_admin`) VALUES (NULL, '$team_name', '$uname')") or die(mysql_error());
-     header("Location: http://localhost/Teame_data/ApplicationTeaMe/www/teams.php");
+     header("Location: http://localhost/Teame_data/ApplicationTeaMe/www/teams.html");
      exit();
 
    }

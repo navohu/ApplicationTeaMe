@@ -37,7 +37,7 @@
               <div data-role="navbar">
                   <ul>
                     <li><a href="edit-profile.php" data-icon="edit" data-ajax="false">Edit Profile</a></li>
-                    <li><a href="teams.php" data-icon="search" data-ajax="false">Choose a Team</a></li>
+                    <li><a href="teams.html" data-icon="search" data-ajax="false">Choose a Team</a></li>
                     <li><a href="index.html" data-icon="back" data-ajax="false">Logout</a></li>
                   </ul>
               </div>
