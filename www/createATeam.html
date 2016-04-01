@@ -52,6 +52,11 @@
    left:0;
   }
 </style>
+<?php
+session_start();
+$uname = $_SESSION["uuid"];
+echo $uname;
+?>
 
 
             <form name="form" action="createTeam1.php" method="post">
