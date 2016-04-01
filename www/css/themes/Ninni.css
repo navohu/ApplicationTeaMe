@@ -774,10 +774,13 @@ button[disabled],
 .ui-content{
 	padding: 0em !important;
 	position: relative;
-	height: 90%;
+	height: 100%;
 	width: 100%;
 	max-height: 100%;
 	overflow: hidden !important;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 #feel-today-header{
@@ -795,7 +798,7 @@ button[disabled],
     width: 100%;
     position: fixed;
     resize: none;
-    height: 6%;
+    height: 10%;
 }
 
 #messageInput{
@@ -813,9 +816,10 @@ button[disabled],
 }
 #break-send{
 	width: 10%;
+	height: 100%;
 }
 #break-message{
-	width: 80%;
+	width: 90%;
 }
 #onlineNow{
 	/*text-align: center;*/
@@ -884,6 +888,10 @@ button[disabled],
 
 #leaveButton, #sendButton{
 	font-size: 2vw;
+	width: 100%;
+	background: rgba(0,0,0,0);
+    right: 0%;
+    padding: 0px;
 }
 
 div.ui-grid-b *{
@@ -987,4 +995,24 @@ div.ui-grid-b *{
 
 .inputForms{
 	padding: 0.5em;
+}
+
+#myPopup-popup{
+	min-width: 94%;
+	top: 50%;
+	left: 3%;
+	right: 3%;	
+}
+.directing-buttons{
+	background: rgba(0,0,0,0) !important;
+}
+.toprightcorner{
+   position:absolute;
+   top:0;
+   right:0;
+}
+.topleftcorner{
+	position:absolute;
+   top:0;
+   left:0;
 }

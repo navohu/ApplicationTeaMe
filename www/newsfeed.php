@@ -41,18 +41,17 @@ session_start();
             </div>
             <!-- MAIN BODY -->
             <div data-role="main" class="ui-content">
-                <a href="#myPopup" id="onlineNow" data-rel="popup"  data-position-to="window" class="ui-btn ui-btn-inline  ui-icon-user ui-btn-icon-left" data-iconpos="top"></a>
-                <div data-role="popup" id="myPopup">
-                    <ul data-role="listview" data-inset="true" id="userList" class="table-bordered userList ui-btn ui-btn-inline  ui-icon-user ui-btn-icon-left" >
-                    </ul>
-                </div>
                 <div id="newsfeedHistory" class="table-bordered chatHistory"></div>
                 <div id="timeLine"></div>
 
-                <div class="ui-grid-b" id="messageInputDiv">
-                    <div class="ui-block-a" id="break-leave"><button id="leaveButton" class="btn btn-danger leaveButton" onclick="leave()">Leave</button></div>
-                    <div class="ui-block-b" id="break-message"><textarea name="textarea" id="messageInput" placeholder="Enter your message here" class="message" contenteditable="true"></textarea></div>
-                    <div class="ui-block-c" id="break-send"><button id="sendButton" class="btn btn-primary sendButton">Send</button></div>
+
+<!-- <button id="leaveButton" class="btn btn-danger leaveButton" onclick="leave()">Leave</button> 
+
+<button id="sendButton" class="btn btn-primary sendButton">Send</button>
+-->
+                <div class="ui-grid-a" id="messageInputDiv">
+                    <div class="ui-block-a" id="break-message"><textarea name="textarea" id="messageInput" placeholder="Enter your message here" class="message" contenteditable="true"></textarea></div>
+                    <div class="ui-block-b" id="break-send"><a id="sendButton" class="ui-btn btn-primary sendButton ui-icon-carat-r ui-btn-icon-left"></a></div>
                 </div>
 
                 <script type="text/javascript">
