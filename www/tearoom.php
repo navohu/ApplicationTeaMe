@@ -49,12 +49,6 @@ session_start();
                 <div id="teaRoomHistory" class="table-bordered chatHistory"></div>
                 <div id="timeLine"></div>
 
-                <div class="ui-grid-b" id="messageInputDiv">
-                    <div class="ui-block-a" id="break-leave"><button id="leaveButton" class="btn btn-danger leaveButton" onclick="leave()">Leave</button></div>
-                    <div class="ui-block-b" id="break-message"><textarea name="textarea" id="messageInput" placeholder="Enter your message here" class="message" contenteditable="true"></textarea></div>
-                    <div class="ui-block-c" id="break-send"><button id="sendButton" class="btn btn-primary sendButton">Send</button></div>
-                </div>
-
                 <script type="text/javascript">
                     function join(){
                         var uuid = '<?php echo $_SESSION["uuid"]?>';
@@ -138,6 +132,11 @@ session_start();
             </div>
             <!-- FOOTER -->
             <div data-role="footer">
+            <div class="ui-grid-b" id="messageInputDiv">
+                <!-- <div class="ui-block-a" id="break-leave"><button id="leaveButton" class="btn btn-danger leaveButton" onclick="leave()">Leave</button></div> -->
+                <div class="ui-block-b" id="break-message"><textarea name="textarea" id="messageInput" placeholder="Enter your message here" class="message" contenteditable="true"></textarea></div>
+                <div class="ui-block-b" id="break-send"><a id="sendButton" class="ui-btn btn-primary sendButton ui-icon-carat-r ui-btn-icon-left"></a></div>
+            </div>
             <div data-role="navbar">
                 <ul>
                   <li><a href="newsfeed.php" data-icon="home" data-ajax="false">Home</a></li>

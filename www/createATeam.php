@@ -39,6 +39,17 @@
         <div class="col-md-12">
             <!-- <h1 class="text-center">Welcome to TeaMe</h1> -->
             <h1 class="text-center">Create a new Team:</h1>
+            <form>
+              <div class="ui-body ui-body-d ui-corner-all">
+                  <p>Users...</p>
+                  <div data-role="controlgroup" id="my-controlgroup"><!-- items will be injected here --></div>
+              </div>
+            </form>
+              <div class="ui-field-contain">
+                  <label type="radio" name="radio-widget" id="checkbox" for="append" value="#username-input" class="ui-hidden-accessible">Action</label>
+                  <input id="username-input"></input>
+                  <button id="append" data-mini="true" data-inline="true">Append</button>
+              </div>
         </div>
         
 

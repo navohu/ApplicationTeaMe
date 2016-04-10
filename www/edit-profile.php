@@ -11,22 +11,43 @@ $uname = $_SESSION["uuid"];
    $row = mysql_fetch_array($result);
 
 ?>
+<html>
+    <head>
+        <!-- Meta tags -->
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
 
-            <div data-role="header">
-                <ul>
-                  <li><a href="userpage.php" data-icon="edit" data-ajax="false">View Updated Profile</a></li>
-                </ul>
-            </div>
+        <!-- JS File -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/tearoom.js"></script>
+        <script>
+            $(document).bind('mobileinit',function(){
+                $.mobile.changePage.defaults.changeHash = false;
+                $.mobile.hashListeningEnabled = false;
+                $.mobile.pushStateEnabled = false;
+            });
+        </script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="http://cdn.pubnub.com/pubnub.min.js"></script>
+        
+        <!-- Include jQuery Mobile stylesheets -->
+        <link rel="stylesheet" href="css/themes/Ninni.css" />
+        <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+        
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
 
+    </head>
 
-<form name="form" action="update-details.php" method="post">
+    <body>
+        <div data-role="page">
+        <div data-role="header"><h1>Update profile</h1></div>
+        <div class="topleftcorner"><a href="userpage.php" class="directing-buttons ui-btn ui-icon-arrow-l ui-btn-icon-left"></a></div>
 
-    <ul class="tabs">
-      <li class="active"><a href="#general" data-toggle="tab">General</a></li>
-      <li><a href="#personal" data-toggle="tab">Personal</a></li>
-    </ul>
-    <!-- Tab panes -->
-
+        <form name="form" action="update-details.php" method="post">
+            <!-- Tab panes -->
                 <div class="">                      
                     <label for="">First Name</label>
                     <input type="text" class="form-control" placeholder="<?php echo $row['fname'];?>" name="user_fname" value="<?php echo $row['fname'];?>">
@@ -64,34 +85,10 @@ $uname = $_SESSION["uuid"];
                     <label for="">Status</label>
                     <input type="text" class="form-control" placeholder="<?php echo $row['user_status'];?>" name="user_status" value="<?php echo $row['user_status'];?>" id="status">    
                 </div>
-
-
-                <div class="">
-                    <label for="">Short Bio</label>
-                    <textarea class="form-control" placeholder="<?php echo $row['user_shortbio'];?>" rows="10" placeholder="<?php echo $row['user_shortbio'];?>" name="user_shortbio" value="<?php echo $row['user_shortbio'];?>"><?php echo $row['user_shortbio'];?></textarea>
-                </div>
-                <div class="">
-                    <label for="">Birthday</label>   
-                    <input type="date" class="form-control" placeholder="<?php echo $row['user_dob'];?>" name="user_dob" value="<?php echo $row['user_dob'];?>">      
-                </div>
-
-                <label for="">Gender</label>              
-                <div class="">
-                    <div class="">
-                        <label>
-                            <input type="radio" name="user_gender" id="radioButton1" value="Male">Male</label>
-                    </div>              
-                    <div class="">
-                        <label>
-                            <input type="radio" name="user_gender" id="radioButton2" value="Female">Female</label>
-                    </div>
-                </div>
-                <div class="">
-                    <label for="">Country</label>
-                    <input type="text" class="form-control" placeholder="<?php echo $row['user_country'];?>" name="user_country" value="<?php echo $row['user_country'];?>" id="country">    
-                </div>    
-    <br>
-
-    <input type="submit" name="submit" value="Submit">
-
-</form>
+  
+                <br>
+            <input type="submit" name="submit" value="Submit">
+        </form>
+        </div>
+    </body>
+</html>
