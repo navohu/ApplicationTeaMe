@@ -56,7 +56,7 @@
                     <div class="ui-block-a"><input type="submit" name="cool" value="Cool"></div>
                </form> -->
 
-            </div>
+<!--             </div>
             <div data-role="footer">
             <div data-role="navbar">
                 <ul>
@@ -68,6 +68,6 @@
                 </ul>
             </div>
           </div>
-        </div>
+        </div> -->
     </body>
 </html>

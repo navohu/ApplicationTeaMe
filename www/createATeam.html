@@ -43,7 +43,7 @@
         
 
 
-<div class="topcorner"><a href="teams.html" class="directing-buttons ui-btn ui-icon-arrow-l ui-btn-icon-left"></a></div>
+<div class="topcorner"><a href="teams.php" class="directing-buttons ui-btn ui-icon-arrow-l ui-btn-icon-left"></a></div>
 
 <style type="text/css">
  .topcorner{
@@ -52,6 +52,16 @@
    left:0;
   }
 </style>
+
+ <div class="toprightcorner"><a href="addUserManually.php" class="directing-buttons ui-btn ui-icon-plus ui-btn-icon-left"></a></div>
+ <style type="text/css">
+ .toprightcorner{
+   position:absolute;
+   top:0;
+   right:0;
+  }
+</style>
+
 <?php
 session_start();
 $uname = $_SESSION["uuid"];
