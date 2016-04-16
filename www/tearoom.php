@@ -134,7 +134,7 @@ session_start();
             <div data-role="footer">
             <div class="ui-grid-b" id="messageInputDiv">
                 <!-- <div class="ui-block-a" id="break-leave"><button id="leaveButton" class="btn btn-danger leaveButton" onclick="leave()">Leave</button></div> -->
-                <div class="ui-block-b" id="break-message"><textarea name="textarea" id="messageInput" placeholder="Enter your message here" class="message" contenteditable="true"></textarea></div>
+                <div class="ui-block-b" id="break-message"><textarea draggable="false" name="textarea" id="messageInput" placeholder="Enter your message here" class="message" contenteditable="true"></textarea></div>
                 <div class="ui-block-b" id="break-send"><a id="sendButton" class="ui-btn btn-primary sendButton ui-icon-carat-r ui-btn-icon-left"></a></div>
             </div>
             <div data-role="navbar">

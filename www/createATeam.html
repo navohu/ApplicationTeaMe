@@ -55,6 +55,36 @@
 
                 </form>
             </div>
+    <!-- <div class="row clearfix"> -->
+        <div class="col-md-12">
+            <!-- <h1 class="text-center">Welcome to TeaMe</h1> -->
+            <h1 class="text-center">Create a new Team:</h1>
+        </div>
+        
+
+
+<div class="topcorner"><a href="teams.html" class="directing-buttons ui-btn ui-icon-arrow-l ui-btn-icon-left"></a></div>
+
+<style type="text/css">
+ .topcorner{
+   position:absolute;
+   top:0;
+   left:0;
+  }
+</style>
+<?php
+session_start();
+$uname = $_SESSION["uuid"];
+echo $uname;
+?>
+
+
+            <form name="form" action="createTeam1.php" method="post">
+                      <label for="txt-first-name">Type Team Name</label>
+                      <input type="text" name="team_name" >
+                      <input type="submit" name="submit" value="Create">
+
+            </form>
         </div>
     </body>
 </html>

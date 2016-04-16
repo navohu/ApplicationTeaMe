@@ -78,21 +78,6 @@ session_start();
                             channel : channel,
                             callback : function(message) { 
                                 $('#newsfeedHistory')[0].innerHTML = '<li class= "postFeed">' + message  + '<br/>' + $('#newsfeedHistory')[0].innerHTML + '</li>'; 
-                            },
-                            presence : function(state) { 
-                                if (state.action == 'join') {
-                                    if ($('#userList').text().indexOf(state.uuid) == -1) {
-                                        $('#userList')[0].innerHTML = state.uuid + '<br/>' + $('#userList')[0].innerHTML;
-                                    }
-                                } else if (state.action == 'leave' || state.action == 'timeout' || state.action) { 
-                                    var index = $('#userList')[0].innerHTML.indexOf(state.uuid);
-                                    if ( index !== -1) {
-                                        $('#userList')[0].innerHTML = 
-                                            $('#userList')[0].innerHTML.substring(0,index) + 
-                                            $('#userList')[0].innerHTML.substring(index+state.uuid.length+4);
-                                    }
-                                }
-                                
                             }
                         });
                         pubnub.bind('click', pubnub.$('sendButton'), function(e) { 
@@ -128,8 +113,14 @@ session_start();
             <!-- FOOTER -->
             <div data-role="footer">
             <div class="ui-grid-a" id="messageInputDiv">
-                    <div class="ui-block-a" id="break-message"><textarea name="textarea" id="messageInput" placeholder="Enter your message here" class="message" contenteditable="true"></textarea></div>
-                    <div class="ui-block-b" id="break-send"><a id="sendButton" class="ui-btn btn-primary sendButton ui-icon-carat-r ui-btn-icon-left"></a></div>
+
+                    <div class="ui-block-a" id="break-message">
+                    <textarea name="textarea" id="messageInput" placeholder="Create a post"contenteditable="true"></textarea>
+                    </div>
+
+                    <div class="ui-block-b" id="break-send">
+                    <a id="sendButton" class="ui-btn btn-primary sendButton ui-icon-carat-r ui-btn-icon-left"></a>
+                    </div>
             </div>
             <div data-role="navbar">
                 <ul>
