@@ -11,7 +11,7 @@ if(isset($_POST['submit']))
  $check = mysql_query("SELECT * FROM `Users` WHERE `uname` = '$uname' AND `pass` = '$pass'");
  if(mysql_num_rows($check) >= 1){
  	$_SESSION["uuid"] = $uname;
-  	header("Location: http://localhost/Teame_data/ApplicationTeaMe/www/userpage.php");
+  	header("Location: http://localhost/Teame_data/ApplicationTeaMe/www/feelings.php");
   	exit();
  }
  else{

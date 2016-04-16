@@ -30,61 +30,80 @@
     </head>
     <body>
         <div data-role="page" id="userpage">
-            <div data-role="header">
-                <h1>Teams</h1>
-            </div>
-
-<!--             <div data-role="header">
-            <div data-role="navbar">
-                <ul>
-                  <li><a href="edit-profile.php" data-icon="edit" data-ajax="false">Edit Profile</a></li>
-                  <li><a href="" data-icon="search" data-ajax="false">Choose a Team</a></li>
-                  <li><a href="index.html" data-icon="back" data-ajax="false">Logout</a></li>
-                </ul>
-            </div>
-          </div> -->
-
-
+            <div data-role="header"><h1>Teams</h1></div>
             <div class="container">
-    <!-- <div class="row clearfix"> -->
-        <div class="col-md-12">
-            <!-- <h1 class="text-center">Welcome to TeaMe</h1> -->
-            <h1 class="text-center">All teams you are in:</h1>
-        </div>
-        
+            <div class="col-md-12"><h1 class="text-center">All teams you are in:</h1></div>
+            <div class="toprightcorner"><a href="createATeam.html" class="directing-buttons ui-btn ui-icon-plus ui-btn-icon-left"></a></div>
+            <div class="topleftcorner"><a href="userpage.php" class="directing-buttons ui-btn ui-icon-arrow-l ui-btn-icon-left"></a></div>
+
+            <!-- <form> -->
+              <!-- <div class="ui-body ui-body-d ui-corner-all"> -->
+                  <!-- <p>Users...</p> -->
+                 <!--  <div data-role="controlgroup" id="my-controlgroup"> --><!-- items will be injected here</div> -->
+              <!-- </div> -->
+            <!-- </form> -->
+              <!-- <div class="ui-field-contain"> -->
+                  <!-- <label type="radio" name="radio-widget" id="checkbox" for="append" value="#username-input" class="ui-hidden-accessible">Action</label> -->
+                  <!-- <input id="username-input"></input> -->
+                  <!-- <button id="append" data-mini="true" data-inline="true">Append</button> -->
+              <!-- </div> -->
 
 
-<div class="topcorner"><a href="createATeam.php" class="directing-buttons ui-btn ui-icon-plus ui-btn-icon-left"></a></div>
-<div class="topcorner"><a href="createATeam.php" class="directing-buttons ui-btn ui-icon-plus ui-btn-icon-left"></a></div>
+<!--             <form action="#" method="get">
+                <div class="ui-field-contain">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <input type="radio" name="radio-widget" id="checkbox" value="checkbox">
+                        <label for="checkbox">Checkbox</label>
+                    </fieldset>
+                </div>
+                <div class="ui-field-contain">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <input type="radio" name="radio-orientation" id="isVertical" value="isVertical" checked="checked">
+                        <label for="isVertical">Vertical</label>
+                    </fieldset>
+                </div>
+            </form> -->
+
+             <form>
+                <div class="ui-body ui-body-d ui-corner-all">
+                    <p>Teams you are admin of: </p>
+                </div>
+             </form>
+
+         </div>
+
+     </div>
 
 
-<style type="text/css">
- .topcorner{
-   position:absolute;
-   top:0;
-   right:0;
-  }
-</style>
+<?php
+
+   require('config.php');
+   session_start();
+
+   $uname = $_SESSION["uuid"];
+   // // $team_id = $_SESSION["team_id"];
 
 
+   // $result = mysql_query("SELECT t.* FROM Users u, Teams t, Users_per_Team ut 
+   // WHERE u.uname='$uname' AND 
+   // u.id = 'ut.user_id' AND 
+   // t.team_id = 'ut.team_id'");
 
-        <!-- <div class="col-md-4"></div> -->
-    </div>
-<!-- </div> -->
+  //echo 'team id is:' . $team_id;
 
+   $result = mysql_query("SELECT team_name FROM Teams WHERE team_admin='$uname'");
 
+   while($row_team = mysql_fetch_array($result)) { 
+   // $summary = $row_team['team_name']; 
+   // echo $summary . "\n"; 
+    ?>
+               
+                     <div class="">
+                     <p><?php echo $row_team['team_name'] . "\n" ; ?></p>
+                     </div>
+            
 
-<!--             <div data-role="footer">
-            <div data-role="navbar">
-                <ul>
-                  <li><a href="newsfeed.html" data-icon="home" data-ajax="false">Home</a></li>
-                  <li><a href="tearoom.php" data-icon="comment" data-ajax="false">TeaRoom</a></li>
-                  <li><a href="message.html" data-icon="check" data-ajax="false">Messaging</a></li>
-                  <li><a href="feelings.php" data-icon="search" data-ajax="false">Feeling</a></li>
-                  <li><a href="userpage.php" data-icon="check" data-ajax="false">User Page</a></li>
-                </ul>
-            </div>
-          </div> -->
-        </div>
+<?php } ?>
+
     </body>
 </html>
