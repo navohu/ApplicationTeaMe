@@ -1,5 +1,26 @@
 <!-- <?php //include 'top-navigation.php' ?> -->
+<?php
 
+   require('config.php');
+   require('db.php');
+   session_start();
+
+   $uname = $_SESSION["uuid"];
+
+   $sql = "SELECT * FROM Users WHERE uname = '$uname'";
+   $result = mysql_query($sql);
+   $row = mysql_fetch_assoc($result);
+// if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+
+   // $pass = md5($pass);
+    // while() {
+    //     echo "First Name: <b>" . $row["fname"] . "</b><br /> Last Name: <b>" . $row["lname"] . "</b><br /> Username: <b>" . $row["uname"] . "</b><br /> Email address: <b>" . $row["email"] . "</b><br /> Mood: <b>" . $row["user_feeling"] . "</b><br /> Location: <b>" . $row["user_location"] . "</b><br /> Status: <b>" . $row["user_status"] . "</b><br /> <br />";
+    // }
+
+    // Password: <b>" . $row["pass"] . "</b><br />
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,6 +44,7 @@
         
         <!-- Include jQuery Mobile stylesheets -->
         <link rel="stylesheet" href="css/themes/Ninni.css" />
+        <link rel="stylesheet" href="css/index.css" />
         <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
         
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
@@ -42,10 +64,24 @@
                   </ul>
               </div>
             </div>
-            <div class="container">
-            <div class="col-md-12">
-                <!-- <h1 class="text-center">Welcome to TeaMe</h1> -->
-                <h1 class="text-center">Profile</h1>
+            <div data-role="content">
+              <h1 id="userpageheading" style="text-align:center"><?php echo $row["fname"] . " " . $row["lname"]?></h1>
+              <div class="ui-grid-a" id="userTable" style="padding:0.5em">
+                <div class="ui-block-a">
+                  <p class="utable">Username</p>
+                  <p class="utable">Email</p>
+                  <p class="utable">User feeling</p>
+                  <p class="utable">User location</p>
+                  <p class="utable">User status</p>
+                </div>
+                <div class="ui-block-b">
+                  <p class="utable"><?php echo $row["uname"]?></p>
+                  <p class="utable"><?php echo $row["email"]?></p>
+                  <p class="utable"><?php echo $row["user_feeling"]?></p>
+                  <p class="utable"><?php echo $row["user_location"]?></p>
+                  <p class="utable"><?php echo $row["user_status"]?></p>
+                </div>
+              </div>
             </div>
             <div data-role="footer">
                 <div data-role="navbar">
@@ -58,28 +94,5 @@
                 </div>
             </div>
         </div>
-<?php
-
-   require('config.php');
-   require('db.php');
-   session_start();
-
-   $uname = $_SESSION["uuid"];
-
-   $sql = "SELECT * FROM Users WHERE uname = '$uname'";
-   $result = mysql_query($sql);
-
-// if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-
-   // $pass = md5($pass);
-    while($row = mysql_fetch_assoc($result)) {
-        echo "First Name: <b>" . $row["fname"] . "</b><br /> Last Name: <b>" . $row["lname"] . "</b><br /> Username: <b>" . $row["uname"] . "</b><br /> Email address: <b>" . $row["email"] . "</b><br /> Mood: <b>" . $row["user_feeling"] . "</b><br /> Location: <b>" . $row["user_location"] . "</b><br /> Status: <b>" . $row["user_status"] . "</b><br /> <br />";
-    // }
-
-        // Password: <b>" . $row["pass"] . "</b><br />
-}
-
-?>
     </body>
 </html>
