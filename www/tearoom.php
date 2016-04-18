@@ -36,11 +36,11 @@ session_start();
         <!-- MESSAGE PAGE -->
         <div data-role="page" id="message">
         <!-- HEADER -->
-            <div data-role="header">
+            <div data-role="header" id="header" class="header">
                 <h1>TeaRoom</h1>
             </div>
             <!-- MAIN BODY -->
-            <div data-role="main" id="tearoom" class="ui-content">
+            <div data-role="content" id="content" class="tearoom">
                 <a href="#myPopup" id="onlineNow" data-rel="popup"  data-position-to="window" class="ui-btn ui-btn-inline  ui-icon-user ui-btn-icon-left" data-iconpos="top"></a>
                 <div data-role="popup" id="myPopup">
                     <ul data-role="listview" data-inset="true" id="userList" class="table-bordered userList ui-btn ui-btn-inline  ui-icon-user ui-btn-icon-left" >
@@ -48,6 +48,16 @@ session_start();
                 </div>
                 <div id="teaRoomHistory" class="table-bordered chatHistory"></div>
                 <div id="timeLine"></div>
+                <div class="ui-grid-a" id="messageInputDiv">
+
+                    <div class="ui-block-a" id="break-message">
+                        <textarea name="textarea" id="messageInput" placeholder="Enter your message here" class="message"></textarea>
+                    </div>
+
+                    <div class="ui-block-b" id="break-send">
+                        <a id="sendButton" class="ui-btn btn-primary sendButton ui-icon-carat-r ui-btn-icon-left"></a>
+                    </div>
+                </div>
 
                 <script type="text/javascript">
                     function join(){
@@ -131,18 +141,13 @@ session_start();
                 </script>
             </div>
             <!-- FOOTER -->
-            <div data-role="footer">
-            <div class="ui-grid-b" id="messageInputDiv">
-                <!-- <div class="ui-block-a" id="break-leave"><button id="leaveButton" class="btn btn-danger leaveButton" onclick="leave()">Leave</button></div> -->
-                <div class="ui-block-b" id="break-message"><textarea draggable="false" name="textarea" id="messageInput" placeholder="Enter your message here" class="message" contenteditable="true"></textarea></div>
-                <div class="ui-block-b" id="break-send"><a id="sendButton" class="ui-btn btn-primary sendButton ui-icon-carat-r ui-btn-icon-left"></a></div>
-            </div>
+            <div data-role="footer" id="footer">
             <div data-role="navbar">
                 <ul>
                   <li><a href="newsfeed.php" data-icon="home" data-ajax="false">Home</a></li>
-                  <li><a href="tearoom.php" data-icon="comment" data-ajax="false">TeaRoom</a></li>
-                  <li><a href="message.php" data-icon="check" data-ajax="false">Messaging</a></li>
-                  <li><a href="userpage.php" data-icon="check" data-ajax="false">User Page</a></li>
+                  <li><a href="tearoom.php" data-icon="heart" data-ajax="false">TeaRoom</a></li>
+                  <li><a href="message.php" data-icon="comment" data-ajax="false">Messaging</a></li>
+                  <li><a href="userpage.php" data-icon="user" data-ajax="false">User Page</a></li>
                 </ul>
             </div>
             </div>

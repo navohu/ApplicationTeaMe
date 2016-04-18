@@ -36,3 +36,27 @@
         });
     });
 })( jQuery );
+
+
+$(window).load(function(){
+    var header = document.getElementById('header').getBoundingClientRect();
+    var footer = document.getElementById('footer').getBoundingClientRect();
+    var heightContent = $(window).height()-header.height-footer.height;
+    var topContent = header.height;
+    var content = document.getElementById('content');
+    
+    content.style.height = heightContent + "px";
+    content.style.top = topContent + "px";
+    
+    // var maxTextarea = document.getElementById('break-message').getBoundingClientRect().height;
+    // document.getElementById('messageInput').style.maxheight = maxTextarea + "px";
+    // console.log(maxTextarea);
+});
+
+
+
+
+
+
+
+
