@@ -1,5 +1,11 @@
 <!-- <?php //include 'top-navigation.php' ?> -->
 
+<?php
+session_start();
+$uname = $_SESSION["uuid"];
+echo $uname;
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -37,14 +43,42 @@
             <div class="container">
                 <div class="col-md-12">
                 <h1 class="text-center">Create a new Team:</h1>
-                <form>
+
+           <form name="form" action="createTeam1.php" method="post">
+           <label for="team-name">Type Team Name</label>
+           <input type="text" name="team_name" >
+           <input type="submit" name="submit" value="Create">
+           </form>
+
+       <!--          <form>
                     <div class="ui-body ui-body-d ui-corner-all">
                         <p>Add users:</p>
+<<<<<<< Updated upstream
                         <div data-role="controlgroup" id="my-controlgroup">
                         <!-- items will be injected here --></div>
                     </div>
                 </form>
                 <div class="ui-field-contain">
+=======
+                        <div data-role="controlgroup" id="my-controlgroup"> --><!-- items will be injected here</div> -->
+
+            <h2 class="text-center">Add users:</h2>
+            <form name="form" action="addManually.php" method="post">                     
+            <label for="user-name">Enter User Name:</label>
+            <input type="text" name="uname" >
+            <!-- </div> -->
+
+           <input type="submit" name="submit" value="Add">
+          </form>
+
+      </div>
+  </div>
+
+
+<!--                     </div>
+                </form> -->
+<!--                 <div class="ui-field-contain">
+>>>>>>> Stashed changes
                     <label type="radio" name="radio-widget" id="checkbox" for="append" value="#username-input" class="ui-hidden-accessible">Action</label>
                     <input id="username-input"></input>
                     <button id="append" data-mini="true" data-inline="true">Append</button>
@@ -54,10 +88,35 @@
                     <input type="text" name="team_name" >
                     <input type="submit" name="submit" value="Create">
 
+<<<<<<< Updated upstream
                 </form>
             </div>
 
             <div class="topcorner"><a href="teams.php" class="directing-buttons ui-btn ui-icon-arrow-l ui-btn-icon-left"></a></div>
+=======
+                </form> -->
+
+        
+<div class="topcorner"><a href="teams.php" class="directing-buttons ui-btn ui-icon-arrow-l ui-btn-icon-left"></a></div>
+
+<style type="text/css">
+ .topcorner{
+   position:absolute;
+   top:0;
+   left:0;
+  }
+</style>
+
+ <!-- <div class="toprightcorner"><a href="addUserManually.php" class="directing-buttons ui-btn ui-icon-plus ui-btn-icon-left"></a></div> -->
+<!--  <style type="text/css">
+ .toprightcorner{
+   position:absolute;
+   top:0;
+   right:0;
+  }
+</style> -->
+
+>>>>>>> Stashed changes
 
             <style type="text/css">
              .topcorner{
@@ -67,6 +126,7 @@
               }
             </style>
 
+<<<<<<< Updated upstream
              <div class="toprightcorner"><a href="addUserManually.php" class="directing-buttons ui-btn ui-icon-plus ui-btn-icon-left"></a></div>
              <style type="text/css">
              .toprightcorner{
@@ -81,6 +141,14 @@
             $uname = $_SESSION["uuid"];
             echo $uname;
             ?>
+=======
+<!--             <form name="form" action="createTeam1.php" method="post">
+                      <label for="txt-first-name">Type Team Name</label>
+                      <input type="text" name="team_name" >
+                      <input type="submit" name="submit" value="Create">
+
+            </form> -->
+>>>>>>> Stashed changes
         </div>
     </body>
 </html>

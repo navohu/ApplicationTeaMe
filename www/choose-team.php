@@ -1,35 +1,15 @@
-<!-- <?php //include 'top-navigation.php' ?> -->
 <?php
 
    require('config.php');
    session_start();
 
    $uname = $_SESSION["uuid"];
-   // // $team_id = $_SESSION["team_id"];
-
-
-   // $result = mysql_query("SELECT t.* FROM Users u, Teams t, Users_per_Team ut 
-   // WHERE u.uname='$uname' AND 
-   // u.id = 'ut.user_id' AND 
-   // t.team_id = 'ut.team_id'");
-
-  //echo 'team id is:' . $team_id;
-
-   $result = mysql_query("SELECT team_name FROM Teams WHERE team_admin='$uname'");
-
-
-   // $result_all_teams = mysql_query("SELECT t.team_name FROM Teams t join Users_per_Team ut on t.team_name=ut.team_id");
-   // $value_team = mysql_fetch_object($result_all_teams);
-   // $team_id = $value_team->team_id;
-
-//    $result_all_teams = mysql_query("SELECT t.team_name FROM Teams t, Users u join Users_per_Team ut on t.team_id = ut.team_id WHERE u.uname=$uname AND
-// u.id = ut.user_id");
 
    $result_all_teams = mysql_query("SELECT t.team_name FROM Teams t, Users u, Users_per_Team ut WHERE t.team_id=ut.team_id AND ut.user_id=u.id AND u.uname='$uname'");
 
   ?>
 
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
     <head>
         <!-- Meta tags -->
@@ -59,11 +39,11 @@
     </head>
     <body>
         <div data-role="page" id="userpage">
-            <div data-role="header"><h1>Teams</h1></div>
+            <div data-role="header"><h1>Choose a Team</h1></div>
             <div class="container">
             <div class="col-md-12"><h1 class="text-center">All teams you are in:</h1></div>
-            <div class="toprightcorner"><a href="createATeam.html" class="directing-buttons ui-btn ui-icon-plus ui-btn-icon-left"></a></div>
-            <div class="topleftcorner"><a href="userpage.php" class="directing-buttons ui-btn ui-icon-arrow-l ui-btn-icon-left"></a></div>
+            <div class="topleftcorner"><a href="login.html" class="directing-buttons ui-btn ui-icon-arrow-l ui-btn-icon-left"></a></div>
+            <div class="toprightcorner"><li><a href="login.html" class="directing-buttons ui-btn ui-icon-back ui-btn-icon-left" data-icon="back" data-ajax="false">Logout</a></li></div>
 
             <!-- <form> -->
               <!-- <div class="ui-body ui-body-d ui-corner-all"> -->
@@ -93,25 +73,21 @@
                 </div>
             </form> -->
 
-             <form>
-                <div class="ui-body ui-body-d ui-corner-all">
-                    <p>Teams you are admin of: </p>
-                    <p class="teamAdmin">
-                      <?php
-                         while($row_team = mysql_fetch_array($result)) { 
-                        echo $row_team['team_name'] . "<br>" ;
-                     }
-                     ?>
-                   </p>
+             <form name="form" action="choose-team-1.php" method="post">
 
-                   <p>All teams you are in: </p>
-                    <p class="allTeams">
-                      <?php
-                         while($row_team2 = mysql_fetch_array($result_all_teams)) { 
-                        echo $row_team2['team_name'] . "<br>" ;
-                     }
-                     ?>
-                   </p>
+                <div class="ui-body ui-body-d ui-corner-all">
+
+<?php
+                  while($row_team2 = mysql_fetch_array($result_all_teams)) {  ?>
+
+                  <div class="ui-block-a"><input class="teams" type="button" value="<?php
+                        echo $row_team2['team_name'];?>" name="team_name"> 
+
+                   </div>
+
+   <?php   }
+       ?> 
+
                 </div>
              </form>
 

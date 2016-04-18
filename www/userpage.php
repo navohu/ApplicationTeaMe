@@ -58,6 +58,13 @@
             <div data-role="header">
               <div data-role="navbar">
                   <ul>
+                    <li><a href="all-users.php" data-icon="search" data-ajax="false">View all users</a></li>
+<!--      <form class="navbar-form navbar-left" role="search" method="post" autocomplete="off" action="search-people.php">
+                    <div class="form-group">
+                     <input type="text" class="search form-control" id="searchbox" placeholder="Search for People" name="search-form"/><br />
+                     <div id="display"></div>
+                    </div> 
+     </form> -->
                     <li><a href="edit-profile.php" data-icon="edit" data-ajax="false">Edit Profile</a></li>
                     <li><a href="teams.php" data-icon="search" data-ajax="false">Choose a Team</a></li>
                     <li><a href="index.html" data-icon="back" data-ajax="false">Logout</a></li>

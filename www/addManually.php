@@ -1,8 +1,8 @@
 <?php
 
-require('addUserManually.php');
+require('createATeam.html');
 require('config.php');
-session_start();
+// session_start();
 
 if(isset($_POST)){
 
@@ -27,7 +27,7 @@ if(isset($_POST)){
 	 // WHERE user_id = u.user_id (Users = u)
 
 
-            header("Location: http://localhost/Teame_data/ApplicationTeaMe/www//addUserManually.php");
+            header("Location: http://localhost/Teame_data/ApplicationTeaMe/www//createATeam.html");
             exit();
         }
 
