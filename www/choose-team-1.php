@@ -1,5 +1,3 @@
-<?php include("choose-team.php");?>
-
 <?php
 
    require('config.php');

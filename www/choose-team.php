@@ -39,8 +39,8 @@
     </head>
     <body>
         <div data-role="page" id="userpage">
-            <div data-role="header"><h1>Choose a Team</h1></div>
-            <div class="container">
+            <div data-role="header" id="header" class="header"><h1>Choose a Team</h1></div>
+            <div class="container" id="content">
             <div class="col-md-12"><h1 class="text-center">All teams you are in:</h1></div>
             <div class="topleftcorner"><a href="login.html" class="directing-buttons ui-btn ui-icon-arrow-l ui-btn-icon-left"></a></div>
             <div class="toprightcorner"><li><a href="login.html" class="directing-buttons ui-btn ui-icon-back ui-btn-icon-left" data-icon="back" data-ajax="false">Logout</a></li></div>
@@ -80,7 +80,7 @@
 <?php
                   while($row_team2 = mysql_fetch_array($result_all_teams)) {  ?>
 
-                  <div class="ui-block-a"><input class="teams" type="button" value="<?php
+                  <div class="ui-block-a"><input class="teams" type="submit" value="<?php
                         echo $row_team2['team_name'];?>" name="team_name"> 
 
                    </div>
@@ -94,7 +94,8 @@
          </div>
 
      </div>
-
+    <div data-role="footer" id="footer">
+    </div>
 
 
 
