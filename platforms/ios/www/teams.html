@@ -1,3 +1,5 @@
+<!-- <?php //include 'top-navigation.php' ?> -->
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -28,33 +30,30 @@
     </head>
     <body>
         <div data-role="page" id="userpage">
-            <div data-role="header">
-                <h1>User page</h1>
-            </div>
-
-
+            <div data-role="header"><h1>Teams</h1></div>
             <div class="container">
-    <!-- <div class="row clearfix"> -->
-        <div class="col-md-12">
-            <h1 class="text-center">Welcome to TeaMe</h1>
-        </div>
-        <!-- <div class="col-md-4"></div> -->
-        
-        <!-- <div class="col-md-4"></div> -->
+            <div class="col-md-12"><h1 class="text-center">All teams you are in:</h1></div>
+            <div class="toprightcorner"><a href="createATeam.html" class="directing-buttons ui-btn ui-icon-plus ui-btn-icon-left"></a></div>
+            <div class="topleftcorner"><a href="userpage.php" class="directing-buttons ui-btn ui-icon-arrow-l ui-btn-icon-left"></a></div>
+
+            
+<!--             <form action="#" method="get">
+                <div class="ui-field-contain">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <input type="radio" name="radio-widget" id="checkbox" value="checkbox">
+                        <label for="checkbox">Checkbox</label>
+                    </fieldset>
+                </div>
+                <div class="ui-field-contain">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <input type="radio" name="radio-orientation" id="isVertical" value="isVertical" checked="checked">
+                        <label for="isVertical">Vertical</label>
+                    </fieldset>
+                </div>
+            </form> -->
+
+
     </div>
-<!-- </div> -->
-
-
-            <div data-role="footer">
-            <div data-role="navbar">
-                <ul>
-                  <li><a href="newsfeed.php" data-icon="home" data-ajax="false">Home</a></li>
-                  <li><a href="tearoom.php" data-icon="heart" data-ajax="false">TeaRoom</a></li>
-                  <li><a href="message.php" data-icon="comment" data-ajax="false">Messaging</a></li>
-                  <li><a href="userpage.php" data-icon="user" data-ajax="false">User Page</a></li>
-                </ul>
-            </div>
-          </div>
         </div>
     </body>
 </html>

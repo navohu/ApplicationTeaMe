@@ -15,6 +15,7 @@
 -----------------------------------------------------------------------------------------------------------*/
 html {
 	font-size: 100%;
+	
 }
 body,
 input,
@@ -24,7 +25,8 @@ button,
 .ui-btn {
 	font-size: 1em;
 	line-height: 1.3;
-	 font-family: AppleSDGothicNeo-Thin  /*{global-font-family}*/;
+	font-family: AppleSDGothicNeo-Light;
+	resize: none;
 }
 legend,
 .ui-input-text input,
@@ -35,17 +37,25 @@ legend,
 /* Form labels (overrides font-weight bold in bars, and mini font-size) */
 .ui-mobile label,
 div.ui-controlgroup-label {
+	color: rgba(240,91,71,0.95);
 	font-weight: normal;
 	font-size: 16px;
 }
 /* Separators
 -----------------------------------------------------------------------------------------------------------*/
+.ui-page{
+	background: url("../../img/background2.jpg")no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	min-height: 100%;
+}
 /* Field contain separator (< 28em) */
 .ui-field-contain {
 	border-bottom-color: #828282;
 	border-bottom-color: rgba(0,0,0,.15);
 	border-bottom-width: 1px;
-	border-bottom-style: solid;
 }
 /* Table opt-in classes: strokes between each row, and alternating row stripes */
 /* Classes table-stroke and table-stripe are deprecated in 1.4. */
@@ -75,7 +85,6 @@ div.ui-controlgroup-label {
 label.ui-btn {
 	font-weight: bold;
 	border-width: 1px;
-	border-style: solid;
 }
 .ui-btn {
 	text-decoration: none !important;
@@ -224,10 +233,7 @@ html .ui-alt-icon .ui-radio-off:after {
 html .ui-bar-a .ui-bar-inherit,
 html .ui-body-a .ui-bar-inherit,
 html body .ui-group-theme-a .ui-bar-inherit {
-	background-color: #7F7F7F /*{a-bar-background-color}*/;
-	border-color: #7F7F7F /*{a-bar-border}*/;
 	color: #F05B47 /*{a-bar-color}*/;
-	text-shadow: 0 /*{a-bar-shadow-x}*/ 0px /*{a-bar-shadow-y}*/ 0 /*{a-bar-shadow-radius}*/ #F05B47 /*{a-bar-shadow-color}*/;
 	font-weight: bold;
 }
 .ui-bar-a {
@@ -241,7 +247,6 @@ html body .ui-group-theme-a .ui-bar-inherit {
 	background-color: #f9f9f9 /*{a-page-background-color}*/;
 	border-color: #bbbbbb /*{a-page-border}*/;
 	color: #7F7F7F /*{a-page-color}*/;
-	text-shadow: 0 /*{a-page-shadow-x}*/ 1px /*{a-page-shadow-y}*/ 0 /*{a-page-shadow-radius}*/ #f3f3f3 /*{a-page-shadow-color}*/;
 }
 /* Body: Read-only lists, text inputs, collapsible content */
 .ui-body-a,
@@ -300,7 +305,6 @@ html head + body .ui-btn.ui-btn-a:visited {
 	background-color: #f6f6f6 /*{a-bup-background-color}*/;
 	border-color: #dddddd /*{a-bup-border}*/;
 	color: #333333 /*{a-bup-color}*/;
-	text-shadow: 0 /*{a-bup-shadow-x}*/ 1px /*{a-bup-shadow-y}*/ 0 /*{a-bup-shadow-radius}*/ #f3f3f3 /*{a-bup-shadow-color}*/;
 }
 /* Button hover */
 .ui-page-theme-a .ui-btn:hover,
@@ -750,5 +754,291 @@ button[disabled],
 	position: absolute !important;
 	right: 0;
 	left: 0;
+	border-style: none !important;
+	height: 55px;
 }
-			
+
+.ui-header{
+	position: absolute;
+	height: 55px;
+	background: rgba(204, 204, 204, 0.5);
+	border-style: none !important;
+}
+.ui-grid-b{
+	text-align: center;
+}
+
+.ui-page{
+	overflow: hidden;
+	position: relative;
+	height: 100%;
+}
+
+.ui-content{
+	padding: 0.1em !important;
+	position: absolute;
+	width: 100%;
+	-webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box !important;
+}
+
+#feel-today-header{
+	text-align: center;
+	font-size: 4.9vw;
+}
+
+.emoji{
+	width: 40%;
+	overflow: hidden;
+}	
+/*CHATROOM*/
+#messageInputDiv {
+    max-height: 15%;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+}
+
+#messageInput{
+    max-height: 50px !important;
+    overflow-y: scroll;
+    width: 100%;
+    resize: none !important;
+    overflow: auto;
+    position: relative;
+}
+
+#break-leave{
+	width: 10%;
+}
+#message{
+	overflow-y: hidden; 
+	height: 100%;
+}
+#break-send{
+	width: 10%;
+	height: 100%;
+	position: absolute;
+	right: 0;
+}
+#break-message{
+	width: 90%;
+	max-height: 100%;
+	height: 100%;
+}
+#onlineNow{
+	/*text-align: center;*/
+	border-radius: 50% !important;
+	background-color: rgba(225,225,225, 0.5);
+	padding: 20px !important;
+	right: 0;
+	top: 0;
+	position: absolute;
+	z-index: 10;
+}
+#userList {
+    /*position: absolute;*/
+    height: 80%;
+    width: 100%;
+    background: rgba(204, 204, 204, 0.9);
+    /*top: 15%;
+    left: 5%;*/
+}
+
+.chatHistory {
+    height:82%; 
+    width:100%; 
+    position: absolute;
+    top: 8%;
+    background: rgba(225,225,225,0.2);
+    color: white;
+}
+
+.tearoom{
+	background: url(../../img/woodBackF.jpeg);
+	background-repeat: no-repeat;
+	background-size: 150%;
+}
+
+/*#teaRoomHistory{
+	background: url(../../img/woodBackB.jpeg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}*/
+
+#timeLine{
+	height: 100%;
+    width: 1%;
+    background: rgba(225,225,225,0.2);
+    right: 7.3%;
+    position: absolute;
+}
+
+
+.sendButton {
+    position: absolute;
+    bottom: 1vh;
+    width: 50%;
+    height: 100%;
+    font-size: 2vw;
+}
+
+.leaveButton {
+    position: absolute;
+    bottom: 1vh;
+    width: 50%;
+    height: 100%;
+    font-size: 2vw;
+}
+
+#leaveButton, #sendButton{
+	font-size: 2vw;
+	width: 100%;
+	background: rgba(0,0,0,0);
+    right: 0%;
+    padding: 0px;
+}
+
+div.ui-grid-b *{
+	height: 100%;
+}
+
+.userNameBar {
+    position: absolute;
+    top: 50%;
+    left: 38%;
+}
+
+.joinButton {
+    position: absolute;
+    top: 50%;
+    left: 55%;
+}
+
+.welcome {
+    position: absolute;
+    top: 40%;
+    left: 33%;
+    font-size: xx-large;
+    color: red;
+    font-weight: bold;
+}
+
+.channelState {
+    height:200px; 
+    width:200px; 
+    background-color:#E6E6E6; 
+    position: absolute;
+    top: 15%;
+    left:30%;
+}
+
+.updateButton {
+    position: absolute;
+    top: 25%;
+    left:45%;
+}
+
+.ui-block-a .my-breakpoint{
+	width: 10%;
+}
+.ui-block-b .my-breakpoint{
+	width: 80%;
+}
+.ui-block-c .my-breakpoint{
+	width: 10%;
+}
+
+/* FOOTER AREA */
+#footer-area {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 1024px;
+    height: 100px;
+    background: url(chat-bg-bottom.png);
+}
+.pubnub-logo {
+    background: url(pubnub-logo.png);
+    width: 116px;
+    height: 26px;
+}
+.pubnub-logo-top,
+.pubnub-logo-bottom {
+    position: absolute;
+    top: 21px;
+    right: 20px;
+    font-weight: 200;
+    font-family: "Source Sans Pro";
+    text-align: right;
+    opacity: 0.9;
+}
+.pubnub-logo-bottom {
+    top: 56px;
+    opacity: 0.2;
+}		
+
+.postFeed{
+	list-style-type: none;
+	/*background: rgba(225,225,225,0.5);*/
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.7)), to(rgba(0, 0, 0, 0)));
+	padding: 4%;
+	margin: 3%;
+}
+
+#newsfeedHistory{
+	background-color: rgba(0,0,0,0);
+}
+
+#backbutton{
+	background: rgba(0,0,0,0);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+}
+
+.inputForms{
+	padding: 0.5em;
+}
+
+#myPopup-popup{
+	min-width: 94%;
+	top: 50%;
+	left: 3%;
+	right: 3%;	
+}
+.directing-buttons{
+	background: rgba(0,0,0,0) !important;
+}
+.toprightcorner{
+   position:absolute;
+   top:0;
+   right:0;
+}
+.topleftcorner{
+	position:absolute;
+   top:0;
+   left:0;
+}
+
+#front{
+	height: 100%;
+}
+
+#logofront{
+	width: 100%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+#frontpagelogin{
+	top: 67%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+#content-spacer-bottom {
+    height:30px;
+}

@@ -30,38 +30,37 @@ session_start();
         <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
         
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
-        <link rel="stylesheet" href="css/index.css" />
 
     </head>
     <body>
         <!-- MESSAGE PAGE -->
         <div data-role="page" id="message">
         <!-- HEADER -->
-            <div data-role="header">
+            <div data-role="header" id="header" class="header">
                 <h1>TeaRoom</h1>
             </div>
             <!-- MAIN BODY -->
-            <div data-role="main" class="ui-content">
-                    <h3>TeaRoom Participants</h3>
-                <ul id="userList" class="table-bordered userList" >
-                </ul>
-                <div id="chatHistory" class="table-bordered chatHistory"></div>
+            <div data-role="content" id="content" class="tearoom">
+                <a href="#myPopup" id="onlineNow" data-rel="popup"  data-position-to="window" class="ui-btn ui-btn-inline  ui-icon-user ui-btn-icon-left" data-iconpos="top"></a>
+                <div data-role="popup" id="myPopup">
+                    <ul data-role="listview" data-inset="true" id="userList" class="table-bordered userList ui-btn ui-btn-inline  ui-icon-user ui-btn-icon-left" >
+                    </ul>
+                </div>
+                <div id="teaRoomHistory" class="table-bordered chatHistory"></div>
+                <div id="timeLine"></div>
+                <div class="ui-grid-a" id="messageInputDiv">
 
-                <div id="messageInputDiv" class="ui-responsive">
-                    <div class="ui-grid-a">
-                        <div class="ui-block-a"><button id="leaveButton" class="btn btn-danger leaveButton" onclick="leave()">Leave</button></div>
-                        <div class="ui-block-b"><button id="sendButton" class="btn btn-primary sendButton">Send</button></div>
-                    </div><!-- /grid-a -->
-                    
+                    <div class="ui-block-a" id="break-message">
+                        <textarea name="textarea" id="messageInput" placeholder="Enter your message here" class="message"></textarea>
+                    </div>
 
-                    <textarea name="textarea" id="messageInput" placeholder="Enter your message here" class="message"></textarea>
-
-                    
+                    <div class="ui-block-b" id="break-send">
+                        <a id="sendButton" class="ui-btn btn-primary sendButton ui-icon-carat-r ui-btn-icon-left"></a>
+                    </div>
                 </div>
 
                 <script type="text/javascript">
                     function join(){
-                        debugger;
                         var uuid = '<?php echo $_SESSION["uuid"]?>';
                         console.log(uuid);
                         // window.location = 'tearoom.html?uuid=' + uuid;
@@ -80,6 +79,8 @@ session_start();
                         var subscribe_key = 'sub-c-7ae61028-e9dd-11e3-92e7-02ee2ddab7fe';
                         channel = 'myChat';
                         var username = '<?php echo $_SESSION["uuid"]?>';
+                        // var dt = new Date();
+                        // var time = dt.getHours() + ":" + dt.getMinutes() +  ":  ";
                         console.log(username);
                        
                         pubnub =PUBNUB.init({
@@ -91,7 +92,7 @@ session_start();
                         pubnub.subscribe({
                             channel : channel,
                             callback : function(message) { 
-                                $('#chatHistory')[0].innerHTML = message + '<br/>' + $('#chatHistory')[0].innerHTML; 
+                                $('#teaRoomHistory')[0].innerHTML = message + '<br/>' + $('#teaRoomHistory')[0].innerHTML; 
                             },
                             presence : function(state) { 
                                 if (state.action == 'join') {
@@ -109,18 +110,17 @@ session_start();
                                 
                             }
                         });
-                        pubnub.bind('click', pubnub.$('sendButton'), function(e) { 
+                        pubnub.bind('click', pubnub.$('break-send'), function(e) { 
                             pubnub.publish({
                                 channel : channel, 
-                                message : pubnub.get_uuid() + ' : '  + $('textarea#messageInput').val()
+                                message : pubnub.get_uuid() + ' just posted: ' + '<br/>' + $('textarea#messageInput').val() 
                             });
                             $('#messageInput').val('');
                         });
-
                         /*Publish message when clicking enter and also resets the textbox*/
                         $("#message").keydown(function(event){
                             if(event.keyCode == 13){
-                                $("#sendButton").click();
+                                $("#break-send").click();
                                 $('textarea#messageInput').val(''); 
                             }
                         });
@@ -140,14 +140,13 @@ session_start();
                 </script>
             </div>
             <!-- FOOTER -->
-            <div data-role="footer">
+            <div data-role="footer" id="footer">
             <div data-role="navbar">
                 <ul>
-                  <li><a href="newsfeed.html" data-icon="home" data-ajax="false">Home</a></li>
-                  <li><a href="tearoom.php" data-icon="comment" data-ajax="false">TeaRoom</a></li>
-                  <li><a href="message.html" data-icon="check" data-ajax="false">Messaging</a></li>
-                  <li><a href="feelings.html" data-icon="search" data-ajax="false">Feeling</a></li>
-                  <li><a href="userpage.html" data-icon="check" data-ajax="false">User Page</a></li>
+                  <li><a href="newsfeed.php" data-icon="home" data-ajax="false">Home</a></li>
+                  <li><a href="tearoom.php" data-icon="heart" data-ajax="false">TeaRoom</a></li>
+                  <li><a href="message.php" data-icon="comment" data-ajax="false">Messaging</a></li>
+                  <li><a href="userpage.php" data-icon="user" data-ajax="false">User Page</a></li>
                 </ul>
             </div>
             </div>

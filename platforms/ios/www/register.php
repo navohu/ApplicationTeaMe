@@ -11,8 +11,8 @@ if (isset($_POST['submit']))
 
  if($email1 == $email2 && $pass1 == $pass2)
  {
-   //All good
-   $name = mysql_escape_string($_POST['name']);
+   
+   $fname = mysql_escape_string($_POST['fname']);
    $lname = mysql_escape_string($_POST['lname']);
    $uname = mysql_escape_string($_POST['uname']);
    $email1 = mysql_escape_string($_POST['email1']);
@@ -22,12 +22,12 @@ if (isset($_POST['submit']))
 
    $pass1 = md5($pass1);
    //Check if username is taken
-   $check = mysql_query("SELECT * FROM users WHERE uname = '$uname'")or die(mysql_error());
+   $check = mysql_query("SELECT * FROM Users WHERE uname = '$uname'")or die(mysql_error());
    if (mysql_num_rows($check)>=1) echo "Username already taken";
    //Put everyting in DB
    else{
-   mysql_query("INSERT INTO `Users` (`id`, `name`, `lname`, `uname`, `email`, `pass`) VALUES (NULL, '$name', '$lname', '$uname', '$email1', '$pass1')") or die(mysql_error());
-   header("Location: http://localhost/Teame_data/ApplicationTeaMe/www/log-in.html");
+   mysql_query("INSERT INTO `Users` (`id`, `fname`, `lname`, `uname`, `email`, `pass`) VALUES (NULL, '$fname', '$lname', '$uname', '$email1', '$pass1')") or die(mysql_error());
+   header("Location: http://localhost/Teame_data/ApplicationTeaMe/www/login.php");
    exit();
    }
  }

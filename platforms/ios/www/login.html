@@ -10,6 +10,7 @@
         <!-- JS File -->
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/tearoom.js"></script>
         <script>
             $(document).bind('mobileinit',function(){
                 $.mobile.changePage.defaults.changeHash = false;
@@ -23,19 +24,30 @@
         <link rel="stylesheet" href="css/themes/Ninni.css" />
         <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
         
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
-
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
     </head>
-    <body onload="onBodyLoad()">
+
+    <body>
         <!-- HOME PAGE -->
         <div data-role="page" id="home">
             <div data-role="header">
-                <h1>TeaMe</h1>
+                <h1>Login</h1>
+                <a href="index.html" id="backbutton" class="ui-btn ui-icon-arrow-l ui-btn-icon-left"></a>
             </div>
-            <div data-role="main" class="ui-content">
-                <p>Login</p>
-                <?php include 'login.php';?>
-            </div>
+            <!-- MAIN BODY -->
+            <div role="main" class="ui-content">
+            
+
+            <!-- PHP -->
+            <form name="form" action="login.php" method="post" class="inputForms">
+                <label for="txt-email">Email Address</label>
+                <input type="text" name="uname" id="uname" value=""> 
+                <label for="txt-password">Password</label>
+                <input type="password" name="pass" id="pass" value="">
+                <fieldset data-role="controlgroup"></fieldset>
+                <input type="submit" name="submit" value="Log in">
+            </form>
+        </div><!--/content-->
         </div>     
     </body>
 </html>

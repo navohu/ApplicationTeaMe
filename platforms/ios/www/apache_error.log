@@ -16,3 +16,16 @@
 [Wed Mar 23 15:58:59 2016] [error] [client ::1] Directory index forbidden by Options directive: /Users/nathalievonhuth/Documents/ComputerScience15/SystemsEngineering/GitHub/ApplicationTeaMe/
 [Wed Mar 23 15:58:59 2016] [error] [client ::1] Directory index forbidden by Options directive: /Users/nathalievonhuth/Documents/ComputerScience15/SystemsEngineering/GitHub/ApplicationTeaMe/
 [Wed Mar 23 15:59:16 2016] [notice] caught SIGTERM, shutting down
+[Wed Apr 06 21:02:18 2016] [notice] Digest: generating secret for digest authentication ...
+[Wed Apr 06 21:02:18 2016] [notice] Digest: done
+[Wed Apr 06 21:02:19 2016] [notice] FastCGI: process manager initialized (pid 666)
+[Wed Apr 06 21:02:19 2016] [warn] pid file /Applications/MAMP/Library/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed Apr 06 21:02:19 2016] [notice] Apache/2.2.29 (Unix) mod_wsgi/3.5 Python/2.7.10 PHP/5.6.10 mod_ssl/2.2.29 OpenSSL/0.9.8zg DAV/2 mod_fastcgi/2.4.6 mod_perl/2.0.9 Perl/v5.22.0 configured -- resuming normal operations
+[Sun Apr 10 10:26:35 2016] [error] [client ::1] File does not exist: /Users/nathalievonhuth/Documents/ComputerScience15/SystemsEngineering/GitHub/ApplicationTeaMe/docs-assets, referer: http://localhost/MAMP/?language=English
+[Sun Apr 10 10:26:35 2016] [error] [client ::1] File does not exist: /Users/nathalievonhuth/Documents/ComputerScience15/SystemsEngineering/GitHub/ApplicationTeaMe/apple-touch-icon-precomposed.png
+[Sun Apr 10 10:26:35 2016] [error] [client ::1] File does not exist: /Users/nathalievonhuth/Documents/ComputerScience15/SystemsEngineering/GitHub/ApplicationTeaMe/apple-touch-icon.png
+[Sun Apr 10 10:26:55 2016] [error] [client ::1] Directory index forbidden by Options directive: /Users/nathalievonhuth/Documents/ComputerScience15/SystemsEngineering/GitHub/ApplicationTeaMe/
+[Sun Apr 10 10:26:55 2016] [error] [client ::1] File does not exist: /Users/nathalievonhuth/Documents/ComputerScience15/SystemsEngineering/GitHub/ApplicationTeaMe/favicon.ico, referer: http://localhost/
+[Sun Apr 10 10:27:23 2016] [error] [client ::1] File does not exist: /Users/nathalievonhuth/Documents/ComputerScience15/SystemsEngineering/GitHub/ApplicationTeaMe/ApplicationTeaMe
+[Sun Apr 10 10:27:29 2016] [error] [client ::1] Directory index forbidden by Options directive: /Users/nathalievonhuth/Documents/ComputerScience15/SystemsEngineering/GitHub/ApplicationTeaMe/
+[Sun Apr 10 10:27:42 2016] [notice] caught SIGTERM, shutting down

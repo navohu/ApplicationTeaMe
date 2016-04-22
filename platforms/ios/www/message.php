@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -5,7 +9,7 @@
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
 
         <!-- JS File -->
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -19,44 +23,65 @@
             });
         </script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="http://cdn.pubnub.com/pubnub.min.js"></script>
         
         <!-- Include jQuery Mobile stylesheets -->
         <link rel="stylesheet" href="css/themes/Ninni.css" />
         <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
         
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
-        <link rel="stylesheet" href="css/index.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
 
     </head>
     <body>
-        <!-- HOME PAGE -->
-        <div data-role="page" id="home">
-            <div data-role="header">
-                <h1>Newsfeed</h1>
+        <!-- MESSAGE PAGE -->
+        <div data-role="page" id="message">
+        <!-- HEADER -->
+            <div data-role="header" id="header" class="header">
+                <h1>TeaRoom</h1>
             </div>
             <!-- MAIN BODY -->
-            <div data-role="main" class="ui-content">
-                    <h3>TeaRoom Participants</h3>
-                <ul id="userList" class="table-bordered userList" >
-                </ul>
-                <div id="chatHistory" class="table-bordered chatHistory"></div>
-
-                <div id="messageInputDiv" class="ui-responsive">
-                    <div class="ui-grid-a">
-                        <div class="ui-block-a"><button id="leaveButton" class="btn btn-danger leaveButton" onclick="leave()">Leave</button></div>
-                        <div class="ui-block-b"><button id="sendButton" class="btn btn-primary sendButton">Send</button></div>
-                    </div><!-- /grid-a -->
-
-                    <textarea name="textarea" id="messageInput" placeholder="Enter your message here" class="message"></textarea>
+            <div data-role="content" id="content" class="tearoom">
+                <a href="#myPopup" id="onlineNow" data-rel="popup"  data-position-to="window" class="ui-btn ui-btn-inline  ui-icon-user ui-btn-icon-left" data-iconpos="top"></a>
+                <div data-role="popup" id="myPopup">
+                    <ul data-role="listview" data-inset="true" id="userList" class="table-bordered userList ui-btn ui-btn-inline  ui-icon-user ui-btn-icon-left" >
+                    </ul>
                 </div>
-            
+                <div id="teaRoomHistory" class="table-bordered chatHistory"></div>
+                <div id="timeLine"></div>
+                <div class="ui-grid-a" id="messageInputDiv">
+
+                    <div class="ui-block-a" id="break-message">
+                        <textarea name="textarea" id="messageInput" placeholder="Enter your message here" class="message"></textarea>
+                    </div>
+
+                    <div class="ui-block-b" id="break-send">
+                        <a id="sendButton" class="ui-btn btn-primary sendButton ui-icon-carat-r ui-btn-icon-left"></a>
+                    </div>
+                </div>
 
                 <script type="text/javascript">
+                    function join(){
+                        var uuid = '<?php echo $_SESSION["uuid"]?>';
+                        console.log(uuid);
+                        // window.location = 'tearoom.html?uuid=' + uuid;
+                    }
+                    $("#userName").keydown(function(event){
+                        if(event.keyCode == 13){
+                            $("#joinChannel").click();
+                        }
+                    });
+                </script>
+
+                <script type="text/javascript">
+                    $(document).ready(join());
                     (function() { 
                         var publish_key = 'pub-c-39594782-c4b0-4fb3-80fe-74e262353bf6';
                         var subscribe_key = 'sub-c-7ae61028-e9dd-11e3-92e7-02ee2ddab7fe';
                         channel = 'myChat';
-                        var username = window.location.search.substring(1).split('=')[1];
+                        var username = '<?php echo $_SESSION["uuid"]?>';
+                        // var dt = new Date();
+                        // var time = dt.getHours() + ":" + dt.getMinutes() +  ":  ";
+                        console.log(username);
                        
                         pubnub =PUBNUB.init({
                             publish_key : publish_key,
@@ -67,7 +92,7 @@
                         pubnub.subscribe({
                             channel : channel,
                             callback : function(message) { 
-                                $('#chatHistory')[0].innerHTML = message + '<br/>' + $('#chatHistory')[0].innerHTML; 
+                                $('#teaRoomHistory')[0].innerHTML = message + '<br/>' + $('#teaRoomHistory')[0].innerHTML; 
                             },
                             presence : function(state) { 
                                 if (state.action == 'join') {
@@ -85,18 +110,17 @@
                                 
                             }
                         });
-                        pubnub.bind('click', pubnub.$('sendButton'), function(e) { 
+                        pubnub.bind('click', pubnub.$('break-send'), function(e) { 
                             pubnub.publish({
                                 channel : channel, 
-                                message : pubnub.get_uuid() + ' : '  + $('textarea#messageInput').val()
+                                message : pubnub.get_uuid() + ' just posted: ' + '<br/>' + $('textarea#messageInput').val() 
                             });
                             $('#messageInput').val('');
                         });
-
                         /*Publish message when clicking enter and also resets the textbox*/
                         $("#message").keydown(function(event){
                             if(event.keyCode == 13){
-                                $("#sendButton").click();
+                                $("#break-send").click();
                                 $('textarea#messageInput').val(''); 
                             }
                         });
@@ -115,17 +139,19 @@
                     // $(window).unload(leave());
                 </script>
             </div>
-            <div data-role="footer">
+            <!-- FOOTER -->
+            <div data-role="footer" id="footer">
             <div data-role="navbar">
                 <ul>
-                  <li><a href="newsfeed.html" data-icon="home" data-ajax="false">Home</a></li>
-                  <li><a href="tearoom.php" data-icon="comment" data-ajax="false">TeaRoom</a></li>
-                  <li><a href="message.html" data-icon="check" data-ajax="false">Messaging</a></li>
-                  <li><a href="feelings.html" data-icon="search" data-ajax="false">Feeling</a></li>
-                  <li><a href="userpage.html" data-icon="check" data-ajax="false">User Page</a></li>
+                  <li><a href="newsfeed.php" data-icon="home" data-ajax="false">Home</a></li>
+                  <li><a href="tearoom.php" data-icon="heart" data-ajax="false">TeaRoom</a></li>
+                  <li><a href="message.php" data-icon="comment" data-ajax="false">Messaging</a></li>
+                  <li><a href="userpage.php" data-icon="user" data-ajax="false">User Page</a></li>
                 </ul>
             </div>
-          </div>
-        </div>     
+            </div>
+        </div>
+        <!-- Include the PubNub Library -->
+        <script src="https://cdn.pubnub.com/pubnub-dev.js"></script>
     </body>
 </html>

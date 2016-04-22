@@ -24,6 +24,8 @@ html, body
 {
     padding: 0;
     margin: 0;
+    overflow: hidden;
+    height: 100%;
 }
 body
 {
@@ -659,6 +661,7 @@ body {
 .relative { position: relative }
 .clear { clear: both }
 
+
 /* FOOTER AREA */
 #footer-area {
     position: absolute;
@@ -686,4 +689,19 @@ body {
 .pubnub-logo-bottom {
     top: 56px;
     opacity: 0.2;
+}
+
+#userTable{
+    padding: 0.5em;
+}
+
+#userpageheading{
+    text-align: center;
+    color: white;
+}
+
+.utable{
+    padding: 1.5em;
+    border-bottom: 1px solid white;
+    color: white;
 }

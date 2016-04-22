@@ -110,18 +110,17 @@ session_start();
                                 
                             }
                         });
-                        pubnub.bind('click', pubnub.$('sendButton'), function(e) { 
+                        pubnub.bind('click', pubnub.$('break-send'), function(e) { 
                             pubnub.publish({
                                 channel : channel, 
-                                message : pubnub.get_uuid() + ' : '  + $('textarea#messageInput').val()
+                                message : pubnub.get_uuid() + ' just posted: ' + '<br/>' + $('textarea#messageInput').val() 
                             });
                             $('#messageInput').val('');
                         });
-
                         /*Publish message when clicking enter and also resets the textbox*/
                         $("#message").keydown(function(event){
                             if(event.keyCode == 13){
-                                $("#sendButton").click();
+                                $("#break-send").click();
                                 $('textarea#messageInput').val(''); 
                             }
                         });

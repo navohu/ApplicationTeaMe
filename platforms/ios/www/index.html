@@ -21,34 +21,33 @@
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
         
         <!-- Include jQuery Mobile stylesheets -->
-        <link rel="stylesheet" type="text/css" href="css/themes/jquery.mobile.icons.min.css">
-        <link rel="stylesheet" type="text/css" href="css/themes/TeaMe.min.css">
-        <link rel="stylesheet" href="css/index.css" />
-        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
-        <link href="css/themes/1/teame-theme-1.min.css" rel="stylesheet" />
-        <link href="css/themes/1/jquery.mobile.icons.min.css" rel="stylesheet" />
-        <link href="../../lib/jqm/1.4.5/jquery.mobile.structure-1.4.5.min.css" rel="stylesheet" />
-        <link href="css/application.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/themes/Ninni.css" />
+        <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+        
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
+
 
     </head>
-    <body onload="onBodyLoad()">
+    <body>
         <!-- HOME PAGE -->
         <div data-role="page" id="home">
-            <div data-role="header">
-                <h1>TeaMe</h1>
+            <div data-role="header" id="header">
+                <!-- <img src="img/Logo.png" alt="Logo"> -->
+                <h1></h1>
             </div>
             <!-- MAIN BODY -->
-            <div data-role="main" class="ui-content">
-                <h3>TeaRoom Participants</h3>
-                <div role="main" class="ui-content">
-                    <h2 class="mc-text-center">Welcome!</h2>
-                    <p class="mc-top-margin-1-5"><a>Existing Users</a></p>
-                    <a href="log-in.html" class="ui-btn ui-btn-b ui-corner-all" data-ajax="false">Log In</a>
-                    <p class="mc-top-margin-1-5"><a>Don't have an account?</a></p>
-                    <a href="register.html" class="ui-btn ui-btn-b ui-corner-all" data-ajax="false">Register</a>
-                    <p></p>
+            <div data-role="content" class="ui-content" id="content">
+                <div role="main" class="ui-content" id="front">
+                    <img src="img/Logo.png" alt="Logo" id="logofront">
+                    <div id="frontpagelogin">
+                        <a href="login.html" class="ui-btn ui-btn-b ui-corner-all" data-ajax="false">Log In</a>
+                        <label>Don't have an account?</label>
+                        <a href="register.html" class="ui-btn ui-btn-b ui-corner-all" data-ajax="false">Register</a>
+                        <p></p>
+                    </div>
                 </div><!-- /content -->
             </div>
+            <div data-role="footer" id="footer"></div>
           </div>
         </div>     
     </body>
