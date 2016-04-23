@@ -37,7 +37,7 @@ session_start();
         <div data-role="page" id="message">
         <!-- HEADER -->
             <div data-role="header" id="header" class="header">
-                <h1>TeaRoom</h1>
+                <h1>Chat</h1>
             </div>
             <!-- MAIN BODY -->
             <div data-role="content" id="content" class="tearoom">
@@ -73,11 +73,11 @@ session_start();
                 </script>
 
                 <script type="text/javascript">
-                	$(document).ready(join());
+                    $(document).ready(join());
                     (function() { 
-                        var publish_key = 'pub-c-99f446c9-0648-481a-91c7-fe114cfcf954';
-                        var subscribe_key = 'sub-c-6226b742-08bf-11e6-bb6c-02ee2ddab7fe';
-                        channel = 'teaRoom';
+                        var publish_key = 'pub-c-b5f27dfe-398e-4d7d-8c70-8670e4bed854';
+                        var subscribe_key = 'sub-c-bd09e2c4-08bf-11e6-a6dc-02ee2ddab7fe';
+                        channel = 'messaging';
                         var username = '<?php echo $_SESSION["uuid"]?>';
                         // var dt = new Date();
                         // var time = dt.getHours() + ":" + dt.getMinutes() +  ":  ";
@@ -110,17 +110,18 @@ session_start();
                                 
                             }
                         });
-                        pubnub.bind('click', pubnub.$('break-send'), function(e) { 
+                        pubnub.bind('click', pubnub.$('sendButton'), function(e) { 
                             pubnub.publish({
                                 channel : channel, 
-                                message : pubnub.get_uuid() + ' just posted: ' + '<br/>' + $('textarea#messageInput').val() 
+                                message : pubnub.get_uuid() + ' : '  + $('textarea#messageInput').val()
                             });
                             $('#messageInput').val('');
                         });
+
                         /*Publish message when clicking enter and also resets the textbox*/
                         $("#message").keydown(function(event){
                             if(event.keyCode == 13){
-                                $("#break-send").click();
+                                $("#sendButton").click();
                                 $('textarea#messageInput').val(''); 
                             }
                         });

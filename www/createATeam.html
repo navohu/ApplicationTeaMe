@@ -1,10 +1,5 @@
 <!-- <?php //include 'top-navigation.php' ?> -->
 
-<?php
-session_start();
-$uname = $_SESSION["uuid"];
-echo $uname;
-?>
 
 <!DOCTYPE html>
 <html>
@@ -37,9 +32,9 @@ echo $uname;
     <body>
         <div data-role="page" id="userpage">
             <div data-role="header">
-                <h1>Teams</h1>
+                <h1>Create a team</h1>
             </div>
-            <div class="topleftcorner"><a href="teams.html" class="directing-buttons ui-btn ui-icon-arrow-l ui-btn-icon-left"></a></div>
+            <div class="topleftcorner"><a href="choose-team.php" class="directing-buttons ui-btn ui-icon-arrow-l ui-btn-icon-left"></a></div>
             <div class="container">
                 <div class="col-md-12">
                 <h1 class="text-center">Create a new Team:</h1>
@@ -50,16 +45,10 @@ echo $uname;
            <input type="submit" name="submit" value="Create">
            </form>
 
-       <!--          <form>
-                    <div class="ui-body ui-body-d ui-corner-all">
-                        <p>Add users:</p>
-<<<<<<< Updated upstream
-                        <div data-role="controlgroup" id="my-controlgroup">
-                        <!-- items will be injected here --></div>
                     </div>
                 </form>
                 <div class="ui-field-contain">
-=======
+
                         <div data-role="controlgroup" id="my-controlgroup"> --><!-- items will be injected here</div> -->
 
             <h2 class="text-center">Add users:</h2>
@@ -75,80 +64,13 @@ echo $uname;
   </div>
 
 
-<!--                     </div>
-                </form> -->
-<!--                 <div class="ui-field-contain">
->>>>>>> Stashed changes
-                    <label type="radio" name="radio-widget" id="checkbox" for="append" value="#username-input" class="ui-hidden-accessible">Action</label>
-                    <input id="username-input"></input>
-                    <button id="append" data-mini="true" data-inline="true">Append</button>
-                </div>
-                <form name="form" action="createTeam1.php" method="post">
-                    <label for="txt-first-name">Type Team Name</label>
-                    <input type="text" name="team_name" >
-                    <input type="submit" name="submit" value="Create">
-
-<<<<<<< Updated upstream
-                </form>
-            </div>
-
-            <div class="topcorner"><a href="teams.php" class="directing-buttons ui-btn ui-icon-arrow-l ui-btn-icon-left"></a></div>
-=======
-                </form> -->
-
-        
-<div class="topcorner"><a href="teams.php" class="directing-buttons ui-btn ui-icon-arrow-l ui-btn-icon-left"></a></div>
-
-<style type="text/css">
- .topcorner{
-   position:absolute;
-   top:0;
-   left:0;
-  }
-</style>
-
- <!-- <div class="toprightcorner"><a href="addUserManually.php" class="directing-buttons ui-btn ui-icon-plus ui-btn-icon-left"></a></div> -->
-<!--  <style type="text/css">
- .toprightcorner{
-   position:absolute;
-   top:0;
-   right:0;
-  }
-</style> -->
-
->>>>>>> Stashed changes
-
-            <style type="text/css">
-             .topcorner{
-               position:absolute;
-               top:0;
-               left:0;
-              }
-            </style>
-
-<<<<<<< Updated upstream
-             <div class="toprightcorner"><a href="addUserManually.php" class="directing-buttons ui-btn ui-icon-plus ui-btn-icon-left"></a></div>
-             <style type="text/css">
-             .toprightcorner{
-               position:absolute;
-               top:0;
-               right:0;
-              }
-            </style>
-
             <?php
             session_start();
             $uname = $_SESSION["uuid"];
             echo $uname;
             ?>
-=======
-<!--             <form name="form" action="createTeam1.php" method="post">
-                      <label for="txt-first-name">Type Team Name</label>
-                      <input type="text" name="team_name" >
-                      <input type="submit" name="submit" value="Create">
 
-            </form> -->
->>>>>>> Stashed changes
+
         </div>
     </body>
 </html>

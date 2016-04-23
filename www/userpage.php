@@ -1,4 +1,3 @@
-<!-- <?php //include 'top-navigation.php' ?> -->
 <?php
 
    require('config.php');
@@ -10,15 +9,7 @@
    $sql = "SELECT * FROM Users WHERE uname = '$uname'";
    $result = mysql_query($sql);
    $row = mysql_fetch_assoc($result);
-// if (mysqli_num_rows($result) > 0) {
-    // output data of each row
 
-   // $pass = md5($pass);
-    // while() {
-    //     echo "First Name: <b>" . $row["fname"] . "</b><br /> Last Name: <b>" . $row["lname"] . "</b><br /> Username: <b>" . $row["uname"] . "</b><br /> Email address: <b>" . $row["email"] . "</b><br /> Mood: <b>" . $row["user_feeling"] . "</b><br /> Location: <b>" . $row["user_location"] . "</b><br /> Status: <b>" . $row["user_status"] . "</b><br /> <br />";
-    // }
-
-    // Password: <b>" . $row["pass"] . "</b><br />
 
 ?>
 <!DOCTYPE html>
@@ -58,15 +49,8 @@
             <div data-role="header">
               <div data-role="navbar">
                   <ul>
-                    <li><a href="all-users.php" data-icon="search" data-ajax="false">View all users</a></li>
-<!--      <form class="navbar-form navbar-left" role="search" method="post" autocomplete="off" action="search-people.php">
-                    <div class="form-group">
-                     <input type="text" class="search form-control" id="searchbox" placeholder="Search for People" name="search-form"/><br />
-                     <div id="display"></div>
-                    </div> 
-     </form> -->
                     <li><a href="edit-profile.php" data-icon="edit" data-ajax="false">Edit Profile</a></li>
-                    <li><a href="teams.php" data-icon="search" data-ajax="false">Choose a Team</a></li>
+                    <li><a href="choose.php" data-icon="search" data-ajax="false">Choose a Team</a></li>
                     <li><a href="index.html" data-icon="back" data-ajax="false">Logout</a></li>
                   </ul>
               </div>

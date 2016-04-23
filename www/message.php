@@ -1,8 +1,3 @@
-<?php
-session_start();
-?>
-
-<!DOCTYPE html>
 <html>
     <head>
         <!-- Meta tags -->
@@ -14,7 +9,6 @@ session_start();
         <!-- JS File -->
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript" src="js/tearoom.js"></script>
         <script>
             $(document).bind('mobileinit',function(){
                 $.mobile.changePage.defaults.changeHash = false;
@@ -23,122 +17,45 @@ session_start();
             });
         </script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-        <script src="http://cdn.pubnub.com/pubnub.min.js"></script>
         
         <!-- Include jQuery Mobile stylesheets -->
         <link rel="stylesheet" href="css/themes/Ninni.css" />
+        <link rel="stylesheet" href="css/index.css" />
         <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
         
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
 
     </head>
+
     <body>
-        <!-- MESSAGE PAGE -->
-        <div data-role="page" id="message">
-        <!-- HEADER -->
-            <div data-role="header" id="header" class="header">
-                <h1>TeaRoom</h1>
+        <div data-role="page" id="userpage">
+            <div data-role="header">
+                <h1>Select user</h1>
             </div>
-            <!-- MAIN BODY -->
-            <div data-role="content" id="content" class="tearoom">
-                <a href="#myPopup" id="onlineNow" data-rel="popup"  data-position-to="window" class="ui-btn ui-btn-inline  ui-icon-user ui-btn-icon-left" data-iconpos="top"></a>
-                <div data-role="popup" id="myPopup">
-                    <ul data-role="listview" data-inset="true" id="userList" class="table-bordered userList ui-btn ui-btn-inline  ui-icon-user ui-btn-icon-left" >
-                    </ul>
-                </div>
-                <div id="teaRoomHistory" class="table-bordered chatHistory"></div>
-                <div id="timeLine"></div>
-                <div class="ui-grid-a" id="messageInputDiv">
+            <div data-role="content" id="content">
+                  
+            <?php
 
-                    <div class="ui-block-a" id="break-message">
-                        <textarea name="textarea" id="messageInput" placeholder="Enter your message here" class="message"></textarea>
-                    </div>
+                require('config.php');
+                require ('db.php');
+                session_start();
 
-                    <div class="ui-block-b" id="break-send">
-                        <a id="sendButton" class="ui-btn btn-primary sendButton ui-icon-carat-r ui-btn-icon-left"></a>
-                    </div>
-                </div>
+                $uname=$_SESSION['uuid'];
+                $team_id=$_SESSION['teamuuid'];
 
-                <script type="text/javascript">
-                    function join(){
-                        var uuid = '<?php echo $_SESSION["uuid"]?>';
-                        console.log(uuid);
-                        // window.location = 'tearoom.html?uuid=' + uuid;
-                    }
-                    $("#userName").keydown(function(event){
-                        if(event.keyCode == 13){
-                            $("#joinChannel").click();
-                        }
-                    });
-                </script>
 
-                <script type="text/javascript">
-                    $(document).ready(join());
-                    (function() { 
-                        var publish_key = 'pub-c-39594782-c4b0-4fb3-80fe-74e262353bf6';
-                        var subscribe_key = 'sub-c-7ae61028-e9dd-11e3-92e7-02ee2ddab7fe';
-                        channel = 'myChat';
-                        var username = '<?php echo $_SESSION["uuid"]?>';
-                        // var dt = new Date();
-                        // var time = dt.getHours() + ":" + dt.getMinutes() +  ":  ";
-                        console.log(username);
-                       
-                        pubnub =PUBNUB.init({
-                            publish_key : publish_key,
-                            subscribe_key : subscribe_key,
-                            uuid : username
-                        });
+                $sql = "SELECT u.* FROM Users u, Teams t, Users_per_Team ut WHERE t.team_id=ut.team_id AND ut.user_id=u.id AND t.team_id='$team_id' AND uname != '$uname' order by id desc";
+                $result = mysql_query($sql) or die(mysqli_error($database));
+                while($row = mysql_fetch_assoc($result)) {
 
-                        pubnub.subscribe({
-                            channel : channel,
-                            callback : function(message) { 
-                                $('#teaRoomHistory')[0].innerHTML = message + '<br/>' + $('#teaRoomHistory')[0].innerHTML; 
-                            },
-                            presence : function(state) { 
-                                if (state.action == 'join') {
-                                    if ($('#userList').text().indexOf(state.uuid) == -1) {
-                                        $('#userList')[0].innerHTML = state.uuid + '<br/>' + $('#userList')[0].innerHTML;
-                                    }
-                                } else if (state.action == 'leave' || state.action == 'timeout' || state.action) { 
-                                    var index = $('#userList')[0].innerHTML.indexOf(state.uuid);
-                                    if ( index !== -1) {
-                                        $('#userList')[0].innerHTML = 
-                                            $('#userList')[0].innerHTML.substring(0,index) + 
-                                            $('#userList')[0].innerHTML.substring(index+state.uuid.length+4);
-                                    }
-                                }
-                                
-                            }
-                        });
-                        pubnub.bind('click', pubnub.$('break-send'), function(e) { 
-                            pubnub.publish({
-                                channel : channel, 
-                                message : pubnub.get_uuid() + ' just posted: ' + '<br/>' + $('textarea#messageInput').val() 
-                            });
-                            $('#messageInput').val('');
-                        });
-                        /*Publish message when clicking enter and also resets the textbox*/
-                        $("#message").keydown(function(event){
-                            if(event.keyCode == 13){
-                                $("#break-send").click();
-                                $('textarea#messageInput').val(''); 
-                            }
-                        });
-                    })();
-                </script>
+            ?>
 
-                <script type="text/javascript">
-                    function leave() { 
-                        pubnub.unsubscribe({
-                            channel : channel,
-                            callback : function() {
-                                window.location = 'message.html';
-                            }
-                        });
-                    }
-                    // $(window).unload(leave());
-                </script>
+               <input onclick="window.location='directmessage.php';" class="users" type="submit" value="<?php echo $row['fname'];?>" name="fname">
+
+            <?php } ?>  
+
             </div>
+
             <!-- FOOTER -->
             <div data-role="footer" id="footer">
             <div data-role="navbar">
@@ -150,8 +67,4 @@ session_start();
                 </ul>
             </div>
             </div>
-        </div>
-        <!-- Include the PubNub Library -->
-        <script src="https://cdn.pubnub.com/pubnub-dev.js"></script>
-    </body>
-</html>
+</body>

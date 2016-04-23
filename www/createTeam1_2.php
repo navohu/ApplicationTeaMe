@@ -1,4 +1,4 @@
-<?php include("createATeam.html");?>
+<?php include("createATeam_2.html");?>
 hello
 
 <?php
@@ -32,7 +32,7 @@ hello
      mysql_query("INSERT INTO `Users_per_Team` (`user_id`, `team_id`) VALUES ('$user_id', '$team_id')") or die(mysql_error());
      $_SESSION["teamuuid"] = $team_id;
 
-     header("Location: http://localhost/Teame_data/ApplicationTeaMe/www/createATeam.html");
+     header("Location: http://localhost/Teame_data/ApplicationTeaMe/www/createATeam_2.html");
      exit();
 
    }

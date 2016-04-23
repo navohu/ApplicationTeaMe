@@ -1,5 +1,6 @@
 <!-- <?php //include 'top-navigation.php' ?> -->
 
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -30,30 +31,45 @@
     </head>
     <body>
         <div data-role="page" id="userpage">
-            <div data-role="header"><h1>Teams</h1></div>
+            <div data-role="header">
+                <h1>Create a team</h1>
+            </div>
+            <div class="topleftcorner"><a href="choose.php" class="directing-buttons ui-btn ui-icon-arrow-l ui-btn-icon-left"></a></div>
             <div class="container">
-            <div class="col-md-12"><h1 class="text-center">All teams you are in:</h1></div>
-            <div class="toprightcorner"><a href="createATeam.html" class="directing-buttons ui-btn ui-icon-plus ui-btn-icon-left"></a></div>
-            <div class="topleftcorner"><a href="userpage.php" class="directing-buttons ui-btn ui-icon-arrow-l ui-btn-icon-left"></a></div>
+                <div class="col-md-12">
+                <h1 class="text-center">Create a new Team:</h1>
 
-            
-<!--             <form action="#" method="get">
+           <form name="form" action="createTeam1_2.php" method="post">
+           <label for="team-name">Type Team Name</label>
+           <input type="text" name="team_name" >
+           <input type="submit" name="submit" value="Create">
+           </form>
+
+
+                    </div>
+                </form>
                 <div class="ui-field-contain">
-                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <input type="radio" name="radio-widget" id="checkbox" value="checkbox">
-                        <label for="checkbox">Checkbox</label>
-                    </fieldset>
-                </div>
-                <div class="ui-field-contain">
-                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <input type="radio" name="radio-orientation" id="isVertical" value="isVertical" checked="checked">
-                        <label for="isVertical">Vertical</label>
-                    </fieldset>
-                </div>
-            </form> -->
 
+                        <div data-role="controlgroup" id="my-controlgroup"> --><!-- items will be injected here</div> -->
 
-    </div>
+            <h2 class="text-center">Add users:</h2>
+            <form name="form" action="addManually2.php" method="post">                     
+            <label for="user-name">Enter User Name:</label>
+            <input type="text" name="uname" >
+            <!-- </div> -->
+
+           <input type="submit" name="submit" value="Add">
+          </form>
+
+      </div>
+  </div>
+
+            <?php
+            session_start();
+            $uname = $_SESSION["uuid"];
+            echo $uname;
+            ?>
+
         </div>
     </body>
 </html>

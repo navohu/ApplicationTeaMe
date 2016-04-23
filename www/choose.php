@@ -41,11 +41,11 @@
         <div data-role="page" id="userpage">
             <div data-role="header" id="header" class="header"><h1>Choose a Team</h1></div>
             <div class="container" id="content">
-            <div class="topleftcorner"><a href="login.html" class="directing-buttons ui-btn ui-icon-arrow-l ui-btn-icon-left"></a></div>
-            <div class="toprightcorner"><a href="createATeam.html" class="directing-buttons ui-btn ui-icon-plus ui-btn-icon-left"></a></div>
+            <div class="topleftcorner"><a href="userpage.php" class="directing-buttons ui-btn ui-icon-arrow-l ui-btn-icon-left"></a></div>
+            <div class="toprightcorner"><a href="createATeam_2.html" class="directing-buttons ui-btn ui-icon-plus ui-btn-icon-left"></a></div>
             
 
-             <form name="form" action="choose-team-1.php" method="post">
+             <form name="form" action="choose-team-2.php" method="post">
 
                 <div class="ui-body ui-body-d ui-corner-all">
 

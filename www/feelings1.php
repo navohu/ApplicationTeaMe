@@ -23,7 +23,7 @@ if (isset($_POST))
  echo $sql ;
 
  mysql_query($sql) or die(mysql_error());
-   header("Location: http://localhost/Teame_data/ApplicationTeaMe/www/userpage.php");
+   header("Location: http://localhost/Teame_data/ApplicationTeaMe/www/message.php");
    exit();
 
 }
