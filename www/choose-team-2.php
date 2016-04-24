@@ -18,7 +18,7 @@
 
    // echo 'team_id';
 
-   header("Location: http://localhost/Teame_data/ApplicationTeaMe/www/userpage.php");
+   header("Location: http://localhost/Teame_data/ApplicationTeaMe/www/message.php");
    exit();
 
 }

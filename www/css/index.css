@@ -702,7 +702,9 @@ body {
 }
 
 .utable{
-    padding: 1.5em;
-    border-bottom: 1px solid white;
+    padding: 1em;
     color: white;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }

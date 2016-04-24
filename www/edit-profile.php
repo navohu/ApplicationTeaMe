@@ -87,7 +87,7 @@ $uname = $_SESSION["uuid"];
                 </div>
   
                 <br>
-            <input type="submit" name="submit" value="Submit">
+            <input type="submit" name="submit" value="Save">
         </form>
         </div>
     </body>

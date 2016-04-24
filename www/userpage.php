@@ -43,19 +43,16 @@
     </head>
     <body>
         <div data-role="page" id="userpage">
-            <div data-role="header">
-                <h1>User page</h1>
-            </div>
-            <div data-role="header">
+            <div data-role="header" id="header">
               <div data-role="navbar">
-                  <ul>
-                    <li><a href="edit-profile.php" data-icon="edit" data-ajax="false">Edit Profile</a></li>
-                    <li><a href="choose.php" data-icon="search" data-ajax="false">Choose a Team</a></li>
-                    <li><a href="index.html" data-icon="back" data-ajax="false">Logout</a></li>
-                  </ul>
+                    <ul>
+                      <li><a href="edit-profile.php" data-icon="edit" data-ajax="false">Edit Profile</a></li>
+                      <li><a href="choose.php" data-icon="search" data-ajax="false">Choose a Team</a></li>
+                      <li><a href="index.html" data-icon="back" data-ajax="false">Logout</a></li>
+                    </ul>
               </div>
             </div>
-            <div data-role="content">
+            <div data-role="content" id="content">
               <h1 id="userpageheading" style="text-align:center"><?php echo $row["fname"] . " " . $row["lname"]?></h1>
               <div class="ui-grid-a" id="userTable" style="padding:0.5em">
                 <div class="ui-block-a">
@@ -74,7 +71,7 @@
                 </div>
               </div>
             </div>
-            <div data-role="footer">
+            <div data-role="footer" id="footer">
                 <div data-role="navbar">
                     <ul>
                       <li><a href="newsfeed.php" data-icon="home" data-ajax="false">Home</a></li>
