@@ -860,12 +860,11 @@ button[disabled],
 	background-repeat: no-repeat;
 	background-size: 150%;
 }
-
-/*#teaRoomHistory{
-	background: url(../../img/woodBackB.jpeg);
+.message1{
+	background: url(../../img/message_b.jpg);
 	background-repeat: no-repeat;
-	background-size: 100%;
-}*/
+	background-size: 150%;
+}
 
 #timeLine{
 	height: 100%;

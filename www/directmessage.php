@@ -40,7 +40,7 @@ session_start();
                 <h1>Chat</h1>
             </div>
             <!-- MAIN BODY -->
-            <div data-role="content" id="content" class="tearoom">
+            <div data-role="content" id="content" class="message1">
                 <a href="#myPopup" id="onlineNow" data-rel="popup"  data-position-to="window" class="ui-btn ui-btn-inline  ui-icon-user ui-btn-icon-left" data-iconpos="top"></a>
                 <div data-role="popup" id="myPopup">
                     <ul data-role="listview" data-inset="true" id="userList" class="table-bordered userList ui-btn ui-btn-inline  ui-icon-user ui-btn-icon-left" >
